@@ -34,40 +34,46 @@
             </div>
           </div>
           <div class="col-7 d-flex justify-content-center">
-            <img src="../assets/8.png" class="w-100" style="z-index: 999" alt="">
-            <img src="../assets/9.png" class="back-side" alt="">
+            <transition name="fade">
+              <img src="../assets/8.png" v-if="show" v-on:load.stop="slide=true" class="w-100" style="z-index: 999" alt="">
+            </transition>
+            <transition name="slide">
+              <img src="../assets/9.png" v-if="slide" class="back-side" alt="">
+            </transition>
           </div>
         </div>
       </div>
-      <div class="container-fluid how-work w-100">
-        <div class="container-fluid row mx-0">
-          <div class="col-5">
-            <h1>Как это работает</h1>
-            <div class="step d-flex flex-row">
-              <img src="../assets/li.png" class="align-self-center" alt="">
-              <div class="d-flex flex-column px-4">
-                <br>
-                <h5>Скачайте приложение</h5>
-                <h5 style="opacity: 0.5">Войдите в приложение и зарегистрируйтесь</h5>
+      <div class="container-fluid how-work w-100" v-on:load="slideUp=true">
+        <div class="container-fluid row mx-0" >
+          <transition name="slide-up">
+            <div class="col-5" v-if="slideUp">
+              <h1>Как это работает</h1>
+              <div class="step d-flex flex-row">
+                <img src="../assets/li.png" class="align-self-center" alt="">
+                <div class="d-flex flex-column px-4">
+                  <br>
+                  <h5>Скачайте приложение</h5>
+                  <h5 style="opacity: 0.5">Войдите в приложение и зарегистрируйтесь</h5>
+                </div>
+              </div>
+              <div class="step d-flex flex-row">
+                <img src="../assets/li.png" class="align-self-center" alt="">
+                <div class="d-flex flex-column px-4">
+                  <br>
+                  <h5>Сканируйте QR с экрана кинотеатра</h5>
+                  <h5 style="opacity: 0.5">Заходите в зал кинотеатра и отсканируйте QR с экрана для подключения к игре</h5>
+                </div>
+              </div>
+              <div class="step d-flex flex-row">
+                <img src="../assets/li.png" class="align-self-center" alt="">
+                <div class="d-flex flex-column px-4">
+                  <br>
+                  <h5>Отвечайте на вопросы и зарабатывайте</h5>
+                  <h5 style="opacity: 0.5">Отвечая на вопросы игры правильно, Вы зарабатываете бонусы которые сможете тратить на кассах кинотеатра</h5>
+                </div>
               </div>
             </div>
-            <div class="step d-flex flex-row">
-              <img src="../assets/li.png" class="align-self-center" alt="">
-              <div class="d-flex flex-column px-4">
-                <br>
-                <h5>Сканируйте QR с экрана кинотеатра</h5>
-                <h5 style="opacity: 0.5">Заходите в зал кинотеатра и отсканируйте QR с экрана для подключения к игре</h5>
-              </div>
-            </div>
-            <div class="step d-flex flex-row">
-              <img src="../assets/li.png" class="align-self-center" alt="">
-              <div class="d-flex flex-column px-4">
-                <br>
-                <h5>Отвечайте на вопросы и зарабатывайте</h5>
-                <h5 style="opacity: 0.5">Отвечая на вопросы игры правильно, Вы зарабатываете бонусы которые сможете тратить на кассах кинотеатра</h5>
-              </div>
-            </div>
-          </div>
+          </transition>
           <div class="col-7 d-flex align-items-center">
             <img src="../assets/screen.png" class="w-100 ml-5 my-5 soon-img-2" alt="">
           </div>
@@ -126,8 +132,13 @@ export default {
   },
   data () {
     return {
-      show: true
+      show: false,
+      slide: false,
+      slideUp: false
     }
+  },
+  mounted () {
+    this.show = !this.show
   }
 }
 </script>
@@ -253,19 +264,28 @@ export default {
     box-shadow: 20px 20px 20px 4px rgba(0,0,0,0.5)
   }
 
-
-
-
-
-
-
-
-
+  /*Animation*/
 
   .fade-enter-active {
-    transition: opacity .5s;
+    transition: opacity 1s;
   }
-  .fade-enter /* .fade-leave-active до версии 2.1.8 */ {
+  .fade-enter {
+    opacity: 0;
+  }
+
+  .slide-enter-active {
+    transition: all 3.2s;
+  }
+  .slide-enter {
+    transform: translateX(-160px);
+    opacity: 0;
+  }
+
+  .slide-up-enter-active {
+    transition: all 3.2s;
+  }
+  .slide-up-enter {
+    transform: translateY(-800px);
     opacity: 0;
   }
 
