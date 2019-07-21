@@ -15,8 +15,8 @@
       <div class="container-fluid about">
         <div class="container-fluid row">
           <div class="col-5 d-flex flex-column justify-content-center">
-            <h1>О проекте<h3>Kinoplay - интерактивная игровая платформа для кинотеатров. Играй в Kinoplay. Зарабатывай бонусы. Ходи в кино бесплатно!</h3>
-            </h1>
+            <h1>О проекте</h1>
+            <h3>Kinoplay - интерактивная игровая платформа для кинотеатров. Играй в Kinoplay. Зарабатывай бонусы. Ходи в кино бесплатно!</h3>
             <div class="buttons d-inline-flex float-left">
               <a href="" class="btn btn-outline-primary">Get App</a>
               <a href="" class="btn btn-outline-danger ml-4">Get App</a>
@@ -35,18 +35,17 @@
           </div>
           <div class="col-7 d-flex justify-content-center">
             <transition name="fade">
-              <img src="../assets/8.png" v-if="show" v-on:load.stop="slide=true" class="w-100" style="z-index: 999" alt="">
+              <img src="../assets/8.png" data-aos="zoom-in" data-aos-delay="1000" class="w-100" style="z-index: 999" alt="">
             </transition>
             <transition name="slide">
-              <img src="../assets/9.png" v-if="slide" class="back-side" alt="">
+              <img src="../assets/9.png" data-aos="fade-right" data-aos-delay="1300" data-aos-duration="3000" class="back-side" alt="">
             </transition>
           </div>
         </div>
       </div>
-      <div class="container-fluid how-work w-100" v-on:load="slideUp=true">
+      <div class="container-fluid how-work w-100">
         <div class="container-fluid row mx-0" >
-          <transition name="slide-up">
-            <div class="col-5" v-if="slideUp">
+            <div class="col-5" data-aos="fade-up" data-aos-delay="800" >
               <h1>Как это работает</h1>
               <div class="step d-flex flex-row">
                 <img src="../assets/li.png" class="align-self-center" alt="">
@@ -73,8 +72,7 @@
                 </div>
               </div>
             </div>
-          </transition>
-          <div class="col-7 d-flex align-items-center">
+          <div class="col-7 d-flex align-items-center" data-aos="fade-left" data-aos-delay="1500" >
             <img src="../assets/screen.png" class="w-100 ml-5 my-5 soon-img-2" alt="">
           </div>
         </div>
@@ -82,13 +80,13 @@
       <div class="container-fluid how-play w-100">
         <div class="container-fluid row">
           <div class="col-6">
-            <h1>Как играть?</h1>
+            <h1 data-aos="fade-up" data-aos-delay="800">Как играть?</h1>
             <div class="row">
               <div class="col-9">
-                <h5 class="py-3">Нажмите на кнопку «play» и отсканируйте QR код с экрана кинотеатра.</h5>
-                <h5 class="py-3">Ваше имя должно появиться на экране кинотеатра</h5>
-                <h5 class="py-3">После того как закончиться отсчёт времени игра автоматический начнётся</h5>
-                <div class="borderer px-4 mt-4">
+                <h5 data-aos="fade-up" data-aos-delay="850" class="py-3">Нажмите на кнопку «play» и отсканируйте QR код с экрана кинотеатра.</h5>
+                <h5 data-aos="fade-up" data-aos-delay="1000" class="py-3">Ваше имя должно появиться на экране кинотеатра</h5>
+                <h5 data-aos="fade-up" data-aos-delay="1000" class="py-3">После того как закончиться отсчёт времени игра автоматический начнётся</h5>
+                <div data-aos="fade-up" data-aos-delay="650" class="borderer px-4 mt-4">
                   <h5 class="py-3">Выберите один из вариантов ответа, чем быстрее и правильнее вы будете отвечать тем больше вероятность победы</h5>
                 </div>
               </div>
@@ -99,8 +97,8 @@
       <div class="container-fluid how-work w-100">
         <div class="container-fluid row mx-0 pt-5">
           <div class="col-5 pt-3">
-            <h1>Скоро <h2>в кинотеатрах</h2></h1>
-            <div class="buttons">
+            <h1 data-aos="fade-up" data-aos-delay="800">Скоро <h2>в кинотеатрах</h2></h1>
+            <div class="buttons" data-aos="fade-up" data-aos-delay="1200">
               <a href="" class="btn btn-outline-primary mt-5">Get App</a>
             </div>
             <div class="social-networks">
@@ -116,8 +114,8 @@
             </div>
           </div>
           <div class="col-7">
-            <img src="../assets/screen.png" class="w-100 ml-5 my-5 soon-img-2" alt="">
-            <img src="../assets/8.png" class="soon-img" alt="">
+            <img data-aos="fade-up" data-aos-delay="800" src="../assets/screen.png" class="w-100 ml-5 my-5 soon-img-2" alt="">
+            <img data-aos="fade-up" data-aos-delay="1300" src="../assets/8.png" class="soon-img" alt="">
           </div>
         </div>
       </div>
@@ -132,9 +130,6 @@ export default {
   },
   data () {
     return {
-      show: false,
-      slide: false,
-      slideUp: false
     }
   },
   mounted () {
@@ -262,31 +257,6 @@ export default {
     box-sizing: border-box;
     border-radius: 36px 0 0 36px;
     box-shadow: 20px 20px 20px 4px rgba(0,0,0,0.5)
-  }
-
-  /*Animation*/
-
-  .fade-enter-active {
-    transition: opacity 1s;
-  }
-  .fade-enter {
-    opacity: 0;
-  }
-
-  .slide-enter-active {
-    transition: all 3.2s;
-  }
-  .slide-enter {
-    transform: translateX(-160px);
-    opacity: 0;
-  }
-
-  .slide-up-enter-active {
-    transition: all 3.2s;
-  }
-  .slide-up-enter {
-    transform: translateY(-800px);
-    opacity: 0;
   }
 
 </style>

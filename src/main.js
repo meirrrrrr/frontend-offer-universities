@@ -7,6 +7,10 @@ import './main.scss'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faYoutube, faInstagram, faFacebookF } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+
+AOS.init()
 
 library.add(faYoutube,faInstagram,faFacebookF)
 
