@@ -34,12 +34,12 @@
             </div>
           </div>
           <div class="col-7 d-flex justify-content-center">
-            <transition name="fade">
-              <img src="../assets/8.png" data-aos="zoom-in" data-aos-delay="1000" class="w-100" style="z-index: 999" alt="">
-            </transition>
-            <transition name="slide">
-              <img src="../assets/9.png" data-aos="fade-right" data-aos-delay="1300" data-aos-duration="3000" class="back-side" alt="">
-            </transition>
+            <div class="circle-1" data-aos="fade-up" data-aos-duration="3000"></div>
+            <div class="circle-2" data-aos="fade-down" data-aos-duration="3000"></div>
+            <div class="circle-3" data-aos="fade-left" data-aos-duration="3000"></div>
+            <div class="circle-4" data-aos="fade-left" data-aos-duration="3000"></div>
+            <img src="../assets/8.png" data-aos="zoom-in" data-aos-delay="1000" class="w-100" style="z-index: 999" alt="">
+            <img src="../assets/9.png" data-aos="fade-right" data-aos-delay="1300" data-aos-duration="3000" class="back-side" alt="">
           </div>
         </div>
       </div>
@@ -81,6 +81,10 @@
         <div class="container-fluid row">
           <div class="col-6">
             <h1 data-aos="fade-up" data-aos-delay="800">Как играть?</h1>
+            <div class="circle-5"></div>
+            <div class="circle-6"></div>
+            <div class="circle-7"></div>
+            <div class="circle-8"></div>
             <div class="row">
               <div class="col-9">
                 <h5 data-aos="fade-up" data-aos-delay="850" class="py-3">Нажмите на кнопку «play» и отсканируйте QR код с экрана кинотеатра.</h5>
@@ -97,7 +101,8 @@
       <div class="container-fluid how-work w-100">
         <div class="container-fluid row mx-0 pt-5">
           <div class="col-5 pt-3">
-            <h1 data-aos="fade-up" data-aos-delay="800">Скоро <h2>в кинотеатрах</h2></h1>
+            <h1 data-aos="fade-up" data-aos-delay="800">Скоро</h1>
+            <h2 data-aos="fade-up" data-aos-delay="800">в кинотеатрах</h2>
             <div class="buttons" data-aos="fade-up" data-aos-delay="1200">
               <a href="" class="btn btn-outline-primary mt-5">Get App</a>
             </div>
@@ -131,9 +136,6 @@ export default {
   data () {
     return {
     }
-  },
-  mounted () {
-    this.show = !this.show
   }
 }
 </script>
@@ -212,6 +214,91 @@ export default {
 
   .buttons {
     margin: 5% 0 10% 0;
+  }
+
+  .circle-1 {
+    position: absolute;
+    z-index: 1000;
+    width: 280px;
+    height: 280px;
+    bottom:-10%;
+    left:5%;
+    border-radius: 50%;
+    background: radial-gradient(301.16px at 83.63% 85.41%, #4D0EB1 0%, #2D0A8C 100%);
+  }
+
+  .circle-2 {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: 25%;
+    left: 15%;
+    border-radius: 50%;
+    background: radial-gradient(205.97px at 83.63% 85.41%, #282A64 0%, #151641 100%);
+    box-shadow: 10px 20px 50px #050512;
+  }
+
+  .circle-3 {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    right:0;
+    top:5%;
+    border-radius: 50%;
+    background: radial-gradient(247.00px at 83.63% 85.41%, #4D0EB1 0%, #2D0A8C 100%);
+  }
+
+  .circle-4 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    bottom: 20%;
+    right: -12%;
+    border-radius: 50%;
+    background: radial-gradient(125.55px at 83.63% 85.41%, #282A64 0%, #151641 100%);
+    box-shadow: 10px 20px 50px #050512;
+  }
+
+  .circle-5 {
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    top:110%;
+    left:-30%;
+    background: radial-gradient(315.11px at 83.63% 85.41%, #282A64 0%, #151641 100%);
+    box-shadow: 10px 20px 50px #050512;
+  }
+
+  .circle-6 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top:200%;
+    left:10%;
+    border-radius: 50%;
+    background: radial-gradient(151.81px at 83.63% 85.41%, #4D0EB1 0%, #2D0A8C 100%);
+  }
+
+  .circle-7 {
+    position: absolute;
+    width: 480px;
+    height: 480px;
+    top:110%;
+    left: 175%;
+    border-radius: 50%;
+    background: radial-gradient(483.34px at 83.63% 85.41%, #4D0EB1 0%, #2D0A8C 100%);
+  }
+
+  .circle-8 {
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    top: 240%;
+    left: 150%;
+    border-radius: 50%;
+    background: radial-gradient(315.11px at 83.63% 85.41%, #282A64 0%, #151641 100%);
+    box-shadow: 10px 20px 50px #050512;
   }
 
   .nav-link {
