@@ -14,9 +14,14 @@
     margin: 0;
     width: 100%;
     height: 100%;
+    font-size: 14px;
+    @media screen and (max-width:768px) {
+      font-size: 8px;
+    }
   }
 
   body {
     overflow-x: hidden;
   }
+
 </style>
