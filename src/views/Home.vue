@@ -29,7 +29,7 @@
           </div>
         </div>
       </div>
-      <div class="container-fluid about">
+      <div class="container-fluid about w-100" style="overflow-x: hidden">
         <div class="container-fluid row">
           <div class="col-md-5 d-flex flex-column justify-content-center">
             <h1>О проекте</h1>
@@ -80,7 +80,7 @@
             </div>
         </div>
       </div>
-      <div class="how-play w-100">
+      <div class="how-play w-100" style="overflow-x: hidden;">
         <div class="row m-5">
           <div class="col-md-6 order-md-last gap"></div>
           <div class="col-md-6 order-md-first">
@@ -295,7 +295,6 @@ export default {
   .front-side {
     width: 31rem;
   }
-
 
   .how-work {
     padding-top: 10%;
