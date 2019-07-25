@@ -4,11 +4,10 @@
         <div class="container-fluid">
           <img src="../assets/logo_kinoplay.png" class="logo pt-2" alt="logo">
           <nav class="nav float-right">
-            <a class="nav-link" href="#">Menu</a>
-            <a class="nav-link" href="#">Menu</a>
-            <a class="nav-link" href="#">Menu</a>
-            <a class="nav-link" href="#">Menu</a>
-            <a class="nav-link active" href="#">Menu</a>
+            <a class="nav-link" href="#about">О проекте</a>
+            <a class="nav-link" href="#how-work">Как работает</a>
+            <a class="nav-link" href="#how-play">Как играть</a>
+            <a class="nav-link active" href="#contacts">Контакты</a>
           </nav>
           <div class="nav-toggle">
             <div class="collapse" id="navbarToggleExternalContent">
@@ -298,7 +297,7 @@ export default {
   }
 
   .front-side {
-    width: 75%;
+    width: 90%;
   }
 
   .how-work {
@@ -331,6 +330,10 @@ export default {
     position: absolute;
     top: 2%;
     width: 8.25rem;
+  }
+
+  .md-display {
+    display: flex;
   }
 
   .nav-link:hover,
@@ -417,10 +420,6 @@ export default {
       }
     }
 
-    .back-side {
-      left: 4rem;
-    }
-
     .circle-4 {
       display: none;
     }
@@ -472,10 +471,6 @@ export default {
       left: 40rem;
     }
 
-    .front-side {
-      margin-left: -4rem;
-    }
-
     .gap {
       padding-top: 100%;
     }
@@ -500,7 +495,7 @@ export default {
 
     .nav-toggle {
       display: block;
-      width: 95%;
+      width: 100%;
       ul {
         padding-top: 15%;
         padding-left: 0;
