@@ -51,7 +51,7 @@
             <h1 class="xs-display">Как это работает</h1>
             <img src="../assets/screen.png" class="w-100 ml-5 my-5 soon-img-2" alt="">
           </div>
-          <div class="col-md-5 order-md-first" data-aos="fade-up" data-aos-delay="800" >
+          <div class="col-md-5 order-md-first mb-5" data-aos="fade-up" data-aos-delay="800" >
               <h1 class="md-display">Как это работает</h1>
               <div class="step d-flex flex-row">
                 <img src="../assets/li.png" class="align-self-center" alt="">
@@ -93,23 +93,19 @@
               <div class="col-9">
                 <div class="how-play-steps">
                   <h5 data-aos="fade-up" data-aos-delay="850" class="py-4"><span class="num">01</span></h5>
-                  <h5 data-aos="fade-up" data-aos-delay="850" class="py-4">Чтобы пользоваться приложением вам необходим интернет</h5>
+                  <h5 data-aos="fade-up" data-aos-delay="850" class="py-4">Для того чтобы войти в игру, введите PIN код с экранов кинотеатров</h5>
                 </div>
                 <div class="how-play-steps">
                   <h5 data-aos="fade-up" data-aos-delay="850" class="py-4"><span class="num">02</span></h5>
-                  <h5 data-aos="fade-up" data-aos-delay="850" class="py-4">Нажмите на кнопку «play» и отсканируйте QR код с экрана кинотеатра.</h5>
+                  <h5 data-aos="fade-up" data-aos-delay="850" class="py-4">Отвечайте на вопросы и зарабатывайте баллы, которые вы сможете потратить в кассах кинотеатра</h5>
                 </div>
                 <div class="how-play-steps">
                   <h5 data-aos="fade-up" data-aos-delay="850" class="py-4"><span class="num">03</span></h5>
-                  <h5 data-aos="fade-up" data-aos-delay="1000" class="py-4">Ваше имя должно появиться на экране кинотеатра</h5>
+                  <h5 data-aos="fade-up" data-aos-delay="1000" class="py-4">Подключитесь к интернету</h5>
                 </div>
                 <div class="how-play-steps">
                   <h5 data-aos="fade-up" data-aos-delay="850" class="py-4"><span class="num">04</span></h5>
-                  <h5 data-aos="fade-up" data-aos-delay="1000" class="py-4">После того как закончиться отсчёт времени игра автоматический начнётся</h5>
-                </div>
-                <div class="how-play-steps">
-                  <h5 data-aos="fade-up" data-aos-delay="850" class="py-4"><span class="num">05</span></h5>
-                  <h5 data-aos="fade-up" data-aos-delay="650"  class="borderer py-4">Выберите один из вариантов ответа, чем быстрее и правильнее вы будете отвечать тем больше вероятность победы</h5>
+                  <h5 data-aos="fade-up" data-aos-delay="1000" class="py-4">В зависимости от вашего места получайте баллы</h5>
                 </div>
               </div>
             </div>
@@ -122,9 +118,9 @@
             <img data-aos="fade-up" data-aos-delay="800" src="../assets/screen.png" class="w-100 ml-5 my-5 soon-img-2" alt="">
             <img data-aos="fade-up" data-aos-delay="1300" src="../assets/8.png" class="soon-img" alt="">
           </div>
-          <div class="col-md-5 order-md-first py-3">
-            <h1 data-aos="fade-up" data-aos-delay="800">Скоро</h1>
-            <h2 data-aos="fade-up" data-aos-delay="800">в кинотеатрах</h2>
+          <div data-aos="fade-up" data-aos-delay="800" class="col-md-5 order-md-first py-3">
+            <h1>Скоро</h1>
+            <h2>в кинотеатрах</h2>
           </div>
         </div>
         <div class="soon-bottom container">
@@ -174,6 +170,9 @@ export default {
   h1 {
     font-size: 6rem;
     line-height: 10rem;
+    @media screen and (max-width: 320px) {
+      font-size: 5rem;
+    }
   }
 
   h3 {
@@ -206,13 +205,6 @@ export default {
     width: 41rem;
     top:.75rem;
     left: 16rem;
-  }
-
-  .borderer {
-    margin-top:5%;
-    padding:7%;
-    background: linear-gradient(158.16deg, #CD6BFC 9.53%, #5C27FE 89.62%);
-    border-radius: .75rem;
   }
 
   .circle-1 {
@@ -317,6 +309,10 @@ export default {
     background-size: cover;
     padding-bottom: 75%;
   }
+
+  .how-play-steps {
+    display: inline-flex;
+  }
   
   .icon {
     color: #FF34DA;
@@ -328,6 +324,8 @@ export default {
   }
 
   .logo {
+    position: absolute;
+    top: 2%;
     width: 8.25rem;
   }
 
@@ -350,7 +348,10 @@ export default {
   }
 
   .num {
-    display: none;
+    display: inline;
+    color: #FF34DA;
+    margin-left: 1rem;
+    margin-right: 3rem;
   }
 
   .soon-img {
@@ -378,26 +379,26 @@ export default {
 
   @media screen and (max-width:768px) {
 
-    /*[data-aos] {*/
-    /*  !*CSS transitions*!*/
-    /*  -o-transition-property: none !important;*/
-    /*  -moz-transition-property: none !important;*/
-    /*  -ms-transition-property: none !important;*/
-    /*  -webkit-transition-property: none !important;*/
-    /*  transition-property: none !important;*/
-    /*  !*CSS transforms*!*/
-    /*  -o-transform: none !important;*/
-    /*  -moz-transform: none !important;*/
-    /*  -ms-transform: none !important;*/
-    /*  -webkit-transform: none !important;*/
-    /*  transform: none !important;*/
-    /*  !*CSS animations*!*/
-    /*  -webkit-animation: none !important;*/
-    /*  -moz-animation: none !important;*/
-    /*  -o-animation: none !important;*/
-    /*  -ms-animation: none !important;*/
-    /*  animation: none !important;*/
-    /*}*/
+    [data-aos] {
+      /*CSS transitions*/
+      -o-transition-property: none !important;
+      -moz-transition-property: none !important;
+      -ms-transition-property: none !important;
+      -webkit-transition-property: none !important;
+      transition-property: none !important;
+      /*CSS transforms*/
+      -o-transform: none !important;
+      -moz-transform: none !important;
+      -ms-transform: none !important;
+      -webkit-transform: none !important;
+      transform: none !important;
+      /*CSS animations*/
+      -webkit-animation: none !important;
+      -moz-animation: none !important;
+      -o-animation: none !important;
+      -ms-animation: none !important;
+      animation: none !important;
+    }
 
     #home {
       width: 100%;
@@ -416,17 +417,7 @@ export default {
       left: 4rem;
     }
 
-    .borderer {
-      background: none;
-      padding:0;
-      margin: 0;
-    }
-
-    .circle-4,
-    .circle-5,
-    .circle-6,
-    .circle-7,
-    .circle-8 {
+    .circle-4 {
       display: none;
     }
 
@@ -446,6 +437,37 @@ export default {
       left: 35rem;
     }
 
+    .circle-5 {
+      width: 12rem;
+      height: 12rem;
+      top:-62rem;
+      left:-6rem;
+      background: radial-gradient(102.58px at 83.63% 85.41%, #4D0EB1 0%, #2D0A8C 100%);
+    }
+
+    .circle-6 {
+      width: 8rem;
+      height: 8rem;
+      top:-55rem;
+      left:-5rem;
+      border-radius: 50%;
+      background: radial-gradient(68.93px at 83.63% 85.41%, #282A64 0%, #151641 100%);
+    }
+
+    .circle-7 {
+      width: 20rem;
+      height: 20rem;
+      top:-15rem;
+      left: 35rem;
+    }
+
+    .circle-8 {
+      width: 10rem;
+      height: 10rem;
+      top: -35rem;
+      left: 40rem;
+    }
+
     .container-fluid {
       padding: 0;
       width: 90%;
@@ -462,10 +484,6 @@ export default {
     .how-play,
     .how-work {
       width: 100%;
-    }
-
-    .how-play-steps {
-      display: inline-flex;
     }
 
     .logo-bottom {
@@ -494,9 +512,6 @@ export default {
     }
 
     .num {
-      display: inline;
-      color: #FF34DA;
-      margin-left: 1rem;
       margin-right: 6rem;
     }
 
@@ -526,7 +541,7 @@ export default {
       display: inline-flex;
       margin-top: 8rem;
       h3 {
-        margin-left: 25rem;
+        margin-left: 50%;
         color: #FF34DA;
       }
     }

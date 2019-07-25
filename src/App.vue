@@ -18,6 +18,15 @@
     @media screen and (max-width:768px) {
       font-size: 8px;
     }
+    @media screen and (max-width:320px) {
+      font-size: 7px;
+    }
+  }
+
+  #app {
+    @media screen and (max-width: 768px) {
+      overflow-x: hidden;
+    }
   }
 
   body {
