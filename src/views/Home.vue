@@ -37,7 +37,7 @@
               </div>
             </div>
             <nav class="navbar-dark">
-              <button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+              <button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="true" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
             </nav>
@@ -144,7 +144,7 @@
       <div class="container-fluid how-work w-100">
         <div class="container-fluid row mx-0" id="contacts">
           <div class="col-md-7 order-md-last">
-            <img data-aos="fade-up" data-aos-delay="800" src="../assets/screen.png" class="w-100 ml-5 my-5 soon-img-2" alt="">
+            <img data-aos="fade-up" data-aos-delay="800" src="../assets/screen.png" style="margin-left: 15%;" class="w-100 my-5 soon-img-2" alt="">
             <img data-aos="fade-up" data-aos-delay="1300" src="../assets/8.png" class="soon-img" alt="">
           </div>
           <div v-if="lang" data-aos="fade-up" data-aos-delay="800" class="col-md-5 order-md-first py-3">
@@ -155,9 +155,17 @@
             <h1>{{ en.soonH1 }}</h1>
           </div>
         </div>
-        <div class="soon-bottom container">
-          <img src="../assets/logo.svg" class="logo-bottom" alt="logo">
-          <h3>info@kinoplay.kz</h3>
+        <div class="soon-bottom mt-5 row container">
+          <div class="col-4">
+            <img src="../assets/logo.svg" class="logo-bottom" alt="logo">
+          </div>
+          <div class="col-5 d-flex flex-column">
+            <h3 class="my-4">По вопросу сотрудничества</h3>
+            <h3 style="opacity: 0.5">+7 707 555 7437</h3>
+            <h3 style="opacity: 0.5">+7 701 678 0211</h3>
+            <h3 style="opacity: 0.5">info@kinoplay.kz</h3>
+
+          </div>
         </div>
       </div>
   </div>
@@ -498,10 +506,6 @@ export default {
       }
     }
 
-    .circle-4 {
-      display: none;
-    }
-
     .circle-1 {
       left:-14rem;
     }
@@ -516,6 +520,10 @@ export default {
       height: 14rem;
       top:45rem;
       left: 35rem;
+    }
+
+    .circle-4 {
+      display: none;
     }
 
     .circle-5 {
@@ -569,7 +577,8 @@ export default {
     }
 
     .logo-bottom {
-      width: 4.5rem;
+      width: 8rem;
+      margin: 0;
     }
 
     .navbar-toggler-icon {
@@ -603,6 +612,7 @@ export default {
     }
 
     .how-play {
+      padding-bottom: 0;
       background-size: contain;
       .col-md-6 {
         margin-top:10%;
@@ -622,7 +632,7 @@ export default {
       width: 16.5rem;
       position: absolute;
       top:5rem;
-      left:-2rem;
+      left:0;
     }
 
     .soon-img-2 {
@@ -631,11 +641,6 @@ export default {
 
     .soon-bottom {
       display: inline-flex;
-      margin-top: 8rem;
-      h3 {
-        margin-left: 45%;
-        color: #FF34DA;
-      }
     }
 
     .xs-display {
