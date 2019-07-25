@@ -14,10 +14,10 @@
             <div class="collapse" id="navbarToggleExternalContent">
               <div class="mt-5">
                 <ul type="none">
-                  <li><a href="">О проекте</a></li>
-                  <li><a href="">Как работает</a></li>
-                  <li><a href="">Как играть</a></li>
-                  <li><a href="">Контакты</a></li>
+                  <li><a href="#about">О проекте</a></li>
+                  <li><a href="#how-work">Как работает</a></li>
+                  <li><a href="#how-play">Как играть</a></li>
+                  <li><a href="#contacts">Контакты</a></li>
                 </ul>
               </div>
             </div>
@@ -30,7 +30,7 @@
         </div>
       </div>
       <div class="container-fluid w-100 about" style="overflow: hidden">
-        <div class="container-fluid row">
+        <div class="container-fluid row" id="about">
           <div class="col-md-5 d-flex flex-column justify-content-center">
             <h1>О проекте</h1>
             <h3>Kinoplay - интерактивная игровая платформа для кинотеатров. Играй в Kinoplay. Зарабатывай бонусы. Ходи в кино бесплатно!</h3>
@@ -45,12 +45,12 @@
               <img src="../assets/9.png" data-aos="fade-right" data-aos-delay="1300" data-aos-duration="3000" class="back-side" alt="">
             </div>
             <div class="xs-display my-5">
-              <img src="../assets/first_block.png" class="w-100" style="z-index: 999" alt="">
+              <img src="../assets/first_block.png" class="w-100 h-auto" style="z-index: 999" alt="">
             </div>
           </div>
         </div>
       </div>
-      <div class="container-fluid how-work w-100">
+      <div class="container-fluid how-work w-100" id="how-work">
         <div class="container-fluid row mx-0" >
           <div class="col-md-7 order-md-last d-flex flex-column align-items-center" data-aos="fade-left" data-aos-delay="1500" >
             <h1 class="xs-display">Как это работает</h1>
@@ -86,7 +86,7 @@
         </div>
       </div>
       <div class="how-play w-100" style="overflow-x: hidden;">
-        <div class="row m-5">
+        <div class="row m-5" id="how-play">
           <div class="col-md-6 order-md-last gap"></div>
           <div class="col-md-6 order-md-first">
             <h1 data-aos="fade-up" data-aos-delay="800">Как играть?</h1>
@@ -118,7 +118,7 @@
         </div>
       </div>
       <div class="container-fluid how-work w-100">
-        <div class="container-fluid row mx-0">
+        <div class="container-fluid row mx-0" id="contacts">
           <div class="col-md-7 order-md-last">
             <img data-aos="fade-up" data-aos-delay="800" src="../assets/screen.png" class="w-100 ml-5 my-5 soon-img-2" alt="">
             <img data-aos="fade-up" data-aos-delay="1300" src="../assets/8.png" class="soon-img" alt="">
