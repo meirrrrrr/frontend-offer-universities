@@ -29,7 +29,7 @@
           </div>
         </div>
       </div>
-      <div class="container-fluid about w-100" style="overflow-x: hidden">
+      <div class="container-fluid w-100 about" style="overflow: hidden">
         <div class="container-fluid row">
           <div class="col-md-5 d-flex flex-column justify-content-center">
             <h1>О проекте</h1>
@@ -293,7 +293,7 @@ export default {
   }
 
   .front-side {
-    width: 31rem;
+    width: 75%;
   }
 
   .how-work {
@@ -467,11 +467,6 @@ export default {
       left: 40rem;
     }
 
-    .container-fluid {
-      padding: 0;
-      width: 90%;
-    }
-
     .front-side {
       margin-left: -4rem;
     }
@@ -489,13 +484,18 @@ export default {
       width: 4.5rem;
     }
 
+    .navbar-toggler-icon {
+      width: 3rem;
+      height: 3rem;
+    }
+
     .nav-link {
       display:none;
     }
 
     .nav-toggle {
       display: block;
-      width: 85%;
+      width: 95%;
       ul {
         padding-top: 15%;
         padding-left: 0;
@@ -538,7 +538,7 @@ export default {
     }
 
     .soon-img-2 {
-      margin-right: 0;
+      margin-right: -22%;
     }
 
     .soon-bottom {
