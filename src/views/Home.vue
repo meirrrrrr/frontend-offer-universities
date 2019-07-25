@@ -313,7 +313,7 @@ export default {
   .how-play-steps {
     display: inline-flex;
   }
-  
+
   .icon {
     color: #FF34DA;
     margin: 4%;
@@ -522,6 +522,11 @@ export default {
       }
     }
 
+    .logo {
+      position: absolute;
+      top: 2%;
+    }
+
     .md-display {
       display: none;
     }
@@ -541,7 +546,7 @@ export default {
       display: inline-flex;
       margin-top: 8rem;
       h3 {
-        margin-left: 50%;
+        margin-left: 45%;
         color: #FF34DA;
       }
     }
