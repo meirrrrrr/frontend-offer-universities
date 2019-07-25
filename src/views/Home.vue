@@ -40,8 +40,13 @@
             <div class="circle-2" data-aos="fade-down" data-aos-duration="3000"></div>
             <div class="circle-3" data-aos="fade-left" data-aos-duration="3000"></div>
             <div class="circle-4" data-aos="fade-left" data-aos-duration="3000"></div>
-            <img src="../assets/8.png" data-aos="zoom-in" data-aos-delay="1000" class="front-side" style="z-index: 999" alt="">
-            <img src="../assets/9.png" data-aos="fade-right" data-aos-delay="1300" data-aos-duration="3000" class="back-side" alt="">
+            <div class="md-display">
+              <img src="../assets/8.png" data-aos="zoom-in" data-aos-delay="1000" class="front-side" style="z-index: 999" alt="">
+              <img src="../assets/9.png" data-aos="fade-right" data-aos-delay="1300" data-aos-duration="3000" class="back-side" alt="">
+            </div>
+            <div class="xs-display my-5">
+              <img src="../assets/first_block.png" class="w-100" style="z-index: 999" alt="">
+            </div>
           </div>
         </div>
       </div>
