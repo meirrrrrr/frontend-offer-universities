@@ -2,22 +2,38 @@
   <div id="home" class="w-100 h-100">
       <div class="container-fluid p-3 navigation d-flex w-100">
         <div class="container-fluid">
-          <img src="../assets/logo_kinoplay.png" class="logo pt-2" alt="logo">
-          <nav class="nav float-right">
-            <a class="nav-link" href="#about">О проекте</a>
-            <a class="nav-link" href="#how-work">Как работает</a>
-            <a class="nav-link" href="#how-play">Как играть</a>
-            <a class="nav-link active" href="#contacts">Контакты</a>
+          <img src="../assets/logo.svg" class="logo pt-2" alt="logo">
+          <nav v-if="lang" class="nav float-right">
+            <a class="nav-link" href="#about"><span>&nbsp;&nbsp;О проект</span>е</a>
+            <a class="nav-link" href="#how-work"><span>&nbsp;&nbsp;Как работае</span>т</a>
+            <a class="nav-link" href="#how-play"><span>&nbsp;&nbsp;Как играт</span>ь</a>
+            <a class="nav-link active" href="#contacts"><span>&nbsp;&nbsp;Контакт</span>ы</a>
+          </nav>
+          <nav v-else class="nav float-right">
+            <a class="nav-link" href="#about"><span>&nbsp;&nbsp;Abou</span>t</a>
+            <a class="nav-link" href="#how-work"><span>&nbsp;&nbsp;How it work</span>s</a>
+            <a class="nav-link" href="#how-play"><span>&nbsp;&nbsp;How to pla</span>y</a>
+            <a class="nav-link active" href="#contacts"><span>&nbsp;&nbsp;Contact</span>s</a>
           </nav>
           <div class="nav-toggle">
             <div class="collapse" id="navbarToggleExternalContent">
               <div class="mt-5">
-                <ul type="none">
+                <ul v-if="lang" type="none">
                   <li><a href="#about">О проекте</a></li>
                   <li><a href="#how-work">Как работает</a></li>
                   <li><a href="#how-play">Как играть</a></li>
                   <li><a href="#contacts">Контакты</a></li>
                 </ul>
+                <ul v-else type="none">
+                  <li><a href="#about">About</a></li>
+                  <li><a href="#how-work">How it works</a></li>
+                  <li><a href="#how-play">How to play</a></li>
+                  <li><a href="#contacts">Contacts</a></li>
+                </ul>
+                <div class="language d-inline-flex">
+                  <button class="lang-selector" v-on:click="lang=true"><span>&nbsp;R</span>U</button>
+                  <button class="lang-selector" v-on:click="lang=false"><span>&nbsp;EN</span>G</button>
+                </div>
               </div>
             </div>
             <nav class="navbar-dark">
@@ -31,8 +47,10 @@
       <div class="container-fluid w-100 about" style="overflow: hidden">
         <div class="container-fluid row" id="about">
           <div class="col-md-5 d-flex flex-column justify-content-center">
-            <h1>О проекте</h1>
-            <h3>Kinoplay - интерактивная игровая платформа для кинотеатров. Играй в Kinoplay. Зарабатывай бонусы. Ходи в кино бесплатно!</h3>
+            <h1 v-if="lang">{{ ru.aboutH1 }}</h1>
+            <h1 v-else>{{ en.aboutH1 }}</h1>
+            <h3 v-if="lang">{{ ru.aboutText }}</h3>
+            <h3 v-else>{{ en.aboutText }}</h3>
           </div>
           <div class="col-md-7 d-flex">
             <div class="circle-1" data-aos="fade-up" data-aos-duration="3000"></div>
@@ -42,6 +60,10 @@
             <div class="md-display">
               <img src="../assets/8.png" data-aos="zoom-in" data-aos-delay="1000" class="front-side" style="z-index: 999" alt="">
               <img src="../assets/9.png" data-aos="fade-right" data-aos-delay="1300" data-aos-duration="3000" class="back-side" alt="">
+              <div class="language d-inline-flex">
+                <button class="lang-selector" v-on:click="lang=true"><span>&nbsp;R</span>U</button>
+                <button class="lang-selector" v-on:click="lang=false"><span>&nbsp;EN</span>G</button>
+              </div>
             </div>
             <div class="xs-display my-5">
               <img src="../assets/first_block.png" class="w-100 h-100" style="z-index: 999" alt="">
@@ -52,11 +74,13 @@
       <div class="container-fluid how-work w-100" id="how-work">
         <div class="container-fluid row mx-0" >
           <div class="col-md-7 order-md-last d-flex flex-column align-items-center" data-aos="fade-left" data-aos-delay="1500" >
-            <h1 class="xs-display">Как это работает</h1>
+            <h1 v-if="lang" class="xs-display">{{ ru.howWorkH1 }}</h1>
+            <h1 v-else class="xs-display">{{ en.howWorkH1 }}</h1>
             <img src="../assets/screen.png" class="w-100 ml-5 my-5 soon-img-2" alt="">
           </div>
           <div class="col-md-5 order-md-first mb-5" data-aos="fade-up" data-aos-delay="800" >
-              <h1 class="md-display">Как это работает</h1>
+              <h1 v-if="lang" class="md-display">{{ ru.howWorkH1 }}</h1>
+              <h1 v-else class="md-display">{{ en.howWorkH1 }}</h1>
               <div class="step d-flex flex-row">
                 <img src="../assets/li.png" class="align-self-center" alt="">
                 <div class="d-flex flex-column px-4">
@@ -88,7 +112,8 @@
         <div class="row m-5" id="how-play">
           <div class="col-md-6 order-md-last gap"></div>
           <div class="col-md-6 order-md-first">
-            <h1 data-aos="fade-up" data-aos-delay="800">Как играть?</h1>
+            <h1 v-if="lang" data-aos="fade-up" data-aos-delay="800">{{ ru.howPlayH1 }}</h1>
+            <h1 v-else data-aos="fade-up" data-aos-delay="800">{{ en.howPlayH1 }}</h1>
             <div class="circle-5"></div>
             <div class="circle-6"></div>
             <div class="circle-7"></div>
@@ -122,13 +147,16 @@
             <img data-aos="fade-up" data-aos-delay="800" src="../assets/screen.png" class="w-100 ml-5 my-5 soon-img-2" alt="">
             <img data-aos="fade-up" data-aos-delay="1300" src="../assets/8.png" class="soon-img" alt="">
           </div>
-          <div data-aos="fade-up" data-aos-delay="800" class="col-md-5 order-md-first py-3">
-            <h1>Скоро</h1>
-            <h2>в кинотеатрах</h2>
+          <div v-if="lang" data-aos="fade-up" data-aos-delay="800" class="col-md-5 order-md-first py-3">
+            <h1>{{ ru.soonH1 }}</h1>
+            <h2>{{ ru.soonH2 }}</h2>
+          </div>
+          <div v-else data-aos="fade-up" data-aos-delay="800" class="col-md-5 order-md-first py-3">
+            <h1>{{ en.soonH1 }}</h1>
           </div>
         </div>
         <div class="soon-bottom container">
-          <img src="../assets/logo_kinoplay.png" class="logo-bottom" alt="logo">
+          <img src="../assets/logo.svg" class="logo-bottom" alt="logo">
           <h3>info@kinoplay.kz</h3>
         </div>
       </div>
@@ -144,6 +172,22 @@ export default {
   },
   data () {
     return {
+      lang: true,
+      en: {
+        aboutH1: 'About project',
+        aboutText: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam blanditiis nam officiis placeat quidem.',
+        howWorkH1: 'How it works',
+        howPlayH1: 'How to play?',
+        soonH1: 'Coming soon',
+      },
+      ru: {
+        aboutH1: 'О проекте',
+        aboutText: 'Kinoplay - интерактивная игровая платформа для кинотеатров. Играй в Kinoplay. Зарабатывай бонусы. Ходи в кино бесплатно!',
+        howWorkH1: 'Как это работает',
+        howPlayH1: 'Как играть?',
+        soonH1: 'Скоро',
+        soonH2: 'в кинотеатрах'
+      }
     }
   }
 }
@@ -193,8 +237,11 @@ export default {
 
   nav {
     .active {
-      border-bottom: 4px solid #CD6BFC;
       color: #CD6BFC;
+      span {
+        padding-bottom: 3px;
+        border-bottom: 2px solid #CD6BFC;
+      }
     }
   }
 
@@ -326,9 +373,37 @@ export default {
     color:#ffffff;
   }
 
+  .language {
+    margin-left: 20%;
+    margin-top: 120%;
+  }
+
+  .lang-selector {
+    border: none;
+    background: none;
+    line-height: 1rem;
+    margin-right: .5rem;
+    padding: .5rem 0 0 .5rem;
+    color: #ffffff;
+  }
+
+  .lang-selector:hover,
+  .lang-selector:active,
+  .lang-selector:focus {
+    span {
+      border-bottom: 1px solid #1FD5FF;
+    }
+    color: #1FD5FF;
+  }
+
+  .lang-selector:focus {
+    outline: none;
+  }
+
   .logo {
     position: absolute;
-    top: 2%;
+    top: 0;
+    left: 0;
     width: 8.25rem;
   }
 
@@ -338,7 +413,10 @@ export default {
 
   .nav-link:hover,
   .nav-link:active {
-    border-bottom: 4px solid #CD6BFC;
+    span {
+      padding-bottom: 3px;
+      border-bottom: 2px solid #CD6BFC;
+    }
     color: #CD6BFC;
   }
 
@@ -478,6 +556,16 @@ export default {
     .how-play,
     .how-work {
       width: 100%;
+    }
+
+    .language {
+      margin-top:1rem;
+      margin-left: -.75rem;
+      font-size: 1.5rem;
+    }
+
+    .logo {
+      left:1.75rem;
     }
 
     .logo-bottom {
