@@ -45,7 +45,7 @@
               <img src="../assets/9.png" data-aos="fade-right" data-aos-delay="1300" data-aos-duration="3000" class="back-side" alt="">
             </div>
             <div class="xs-display my-5">
-              <img src="../assets/first_block.png" class="w-75 h-75" style="z-index: 999" alt="">
+              <img src="../assets/first_block.png" class="w-100 h-100" style="z-index: 999" alt="">
             </div>
           </div>
         </div>
