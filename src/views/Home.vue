@@ -154,11 +154,11 @@
             <img data-aos="fade-up" data-aos-delay="800" src="../assets/screen.png" class="soon-img-2" alt="">
             <img data-aos="fade-up" data-aos-delay="1300" src="../assets/8.png" class="soon-img" alt="">
           </div>
-          <div v-if="lang" data-aos="fade-up" data-aos-delay="800" class="col-md-5 order-md-first d-flex flex-column justify-content-center">
+          <div v-if="lang" data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-delay="800" class="col-md-5 order-md-first d-flex flex-column justify-content-center">
             <h1>{{ ru.soonH1 }}</h1>
             <h2>{{ ru.soonH2 }}</h2>
           </div>
-          <div v-else data-aos="fade-up" data-aos-delay="800" class="col-md-5 order-md-first d-flex flex-column justify-content-center">
+          <div v-else data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-delay="800" class="col-md-5 order-md-first d-flex flex-column justify-content-center">
             <h1>{{ en.soonH1 }}</h1>
             <h2>{{ en.soonH2 }}</h2>
           </div>
