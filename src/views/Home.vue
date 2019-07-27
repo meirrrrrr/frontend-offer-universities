@@ -123,23 +123,23 @@
             <div class="circle-6"></div>
             <div class="circle-7"></div>
             <div class="circle-8"></div>
-            <div class="row">
+            <div class="row" id="steps">
               <div class="col-md-6 col-xl-9">
-                <div class="how-play-steps">
-                  <h5 data-aos="fade-up" data-aos-delay="850" class="py-3"><span class="num">01</span></h5>
-                  <h5 data-aos="fade-up" data-aos-delay="850" class="py-3">Для того чтобы войти в игру, введите PIN код с экранов кинотеатров</h5>
+                <div data-aos="fade-up" data-aos-delay="850" data-aos-anchor="#steps" class="how-play-steps">
+                  <h5 class="py-3"><span class="num">01</span></h5>
+                  <h5 class="steps py-3">Для того чтобы войти в игру, введите PIN код с экранов кинотеатров</h5>
                 </div>
-                <div class="how-play-steps">
-                  <h5 data-aos="fade-up" data-aos-delay="850" class="py-3"><span class="num">02</span></h5>
-                  <h5 data-aos="fade-up" data-aos-delay="850" class="py-3">Отвечайте на вопросы и зарабатывайте баллы, которые вы сможете потратить в кассах кинотеатра</h5>
+                <div data-aos="fade-up" data-aos-delay="900" data-aos-anchor="#steps" class="how-play-steps">
+                  <h5 class="py-3"><span class="num">02</span></h5>
+                  <h5 class="steps py-3">Отвечайте на вопросы и зарабатывайте баллы, которые вы сможете потратить в кассах кинотеатра</h5>
                 </div>
-                <div class="how-play-steps">
-                  <h5 data-aos="fade-up" data-aos-delay="850" class="py-3"><span class="num">03</span></h5>
-                  <h5 data-aos="fade-up" data-aos-delay="1000" class="py-3">Подключитесь к интернету</h5>
+                <div data-aos="fade-up" data-aos-delay="950" data-aos-anchor="#steps" class="how-play-steps">
+                  <h5 class="py-3"><span class="num">03</span></h5>
+                  <h5 class="steps py-3">Подключитесь к интернету</h5>
                 </div>
-                <div class="how-play-steps">
-                  <h5 data-aos="fade-up" data-aos-delay="850" class="py-3"><span class="num">04</span></h5>
-                  <h5 data-aos="fade-up" data-aos-delay="1000" class="py-3">В зависимости от вашего места получайте баллы</h5>
+                <div data-aos="fade-up" data-aos-delay="1000" data-aos-anchor="#steps" class="how-play-steps">
+                  <h5 class="py-3"><span class="num">04</span></h5>
+                  <h5 class="steps py-3">В зависимости от вашего места получайте баллы</h5>
                 </div>
               </div>
             </div>
@@ -332,8 +332,10 @@ export default {
   }
 
   .how-play-steps {
-    width: 100%;
     display: inline-flex;
+    .steps {
+      width: 65%;
+    }
   }
 
   .icon {
@@ -752,7 +754,7 @@ export default {
       width: 18rem;
       height: 18rem;
       left: -5rem;
-      top: 195rem;
+      top: 205rem;
       background: radial-gradient(93.55px at 83.63% 85.41%, #4D0EB1 0%, #2D0A8C 100%);
     }
 
@@ -762,7 +764,7 @@ export default {
       width: 12rem;
       height: 12rem;
       left: -4rem;
-      top: 207rem;
+      top: 217rem;
       background: radial-gradient(68.93px at 83.63% 85.41%, #282A64 0%, #151641 100%);
       box-shadow: 10px 20px 50px #050512;
     }
