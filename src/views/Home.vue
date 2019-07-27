@@ -8,9 +8,9 @@
       <button class="lang-selector" v-on:click="lang=true"><span>&nbsp;R</span>U</button>
       <button class="lang-selector" v-on:click="lang=false"><span>&nbsp;EN</span>G</button>
     </div>
-    <div class="container-fluid p-3 navigation d-flex w-100">
+    <div class="container-fluid navigation py-3 d-flex w-100">
         <div class="container-fluid">
-          <img src="../assets/logo.svg" class="logo pt-2" alt="logo">
+          <img src="../assets/logo.svg" class="md-display logo pt-2" alt="logo">
           <nav v-if="lang" class="nav float-right">
             <a class="nav-link" href="#about"><span>&nbsp;&nbsp;О проект</span>е</a>
             <a class="nav-link" href="#how-work"><span>&nbsp;&nbsp;Как работае</span>т</a>
@@ -21,10 +21,11 @@
             <a class="nav-link" href="#about"><span>&nbsp;&nbsp;Abou</span>t</a>
             <a class="nav-link" href="#how-work"><span>&nbsp;&nbsp;How it work</span>s</a>
             <a class="nav-link" href="#how-play"><span>&nbsp;&nbsp;How to pla</span>y</a>
-            <a class="nav-link active" href="#contacts"><span>&nbsp;&nbsp;Contact</span>s</a>
+            <a class="nav-link" href="#contacts"><span>&nbsp;&nbsp;Contact</span>s</a>
           </nav>
           <div class="nav-toggle">
             <nav class="navbar-dark">
+              <img src="../assets/logo_mobile.svg" class="logo-mobile pt-2" alt="logo">
               <button class="navbar-toggler collapsed float-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="icon-bar top-bar"></span>
                 <span class="icon-bar middle-bar"></span>
@@ -81,38 +82,35 @@
       <div class="section container-fluid how-work h-100 w-100" id="how-work" style="overflow-x: hidden">
         <div class="container-fluid row mx-0" >
           <div class="col-md-7 order-md-last d-flex flex-column" data-aos="fade-left" data-aos-delay="1500" >
-            <h1 v-if="lang" class="xs-display">{{ ru.howWorkH1 }}</h1>
-            <h1 v-else class="xs-display">{{ en.howWorkH1 }}</h1>
+            <h1 v-if="lang" class="w-75 xs-display">{{ ru.howWorkH1 }}</h1>
+            <h1 v-else class="w-75 xs-display">{{ en.howWorkH1 }}</h1>
             <img src="../assets/screen.png" class="soon-img-2" alt="">
           </div>
           <div class="col-md-5 order-md-first d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="800" >
               <h1 v-if="lang" class="md-display">{{ ru.howWorkH1 }}</h1>
               <h1 v-else class="md-display">{{ en.howWorkH1 }}</h1>
-              <div class="step d-flex flex-row">
-                <img src="../assets/li.svg" class="align-self-center" alt="">
-                <div class="d-flex flex-column px-4">
-                  <br>
-                  <h5>Скачайте приложение</h5>
-                  <h5 style="opacity: 0.5">Войдите в приложение и зарегистрируйтесь</h5>
-                </div>
-              </div>
-              <div class="step d-flex flex-row">
-                <img src="../assets/li.svg" class="align-self-center" alt="">
-                <div class="d-flex flex-column px-4">
-                  <br>
-                  <h5>Введите PIN код с экрана кинотеатра</h5>
-                  <h5 style="opacity: 0.5">Заходите в зал кинотеатра и пропишите PIN код с экрана для подключения к игре</h5>
-                </div>
-              </div>
-              <div class="step d-flex flex-row">
-                <img src="../assets/li.svg" class="align-self-center" alt="">
-                <div class="d-flex flex-column px-4">
-                  <br>
-                  <h5>Отвечайте на вопросы и зарабатывайте</h5>
-                  <h5 style="opacity: 0.5">Отвечая на вопросы игры правильно, Вы зарабатываете бонусы которые сможете тратить на кассах кинотеатра</h5>
-                </div>
+            <div class="step pt-5">
+              <img src="../assets/li.svg" class="align-self-center" alt="">
+              <div class="d-flex flex-column pt-2 px-4">
+                <h5>Скачайте приложение</h5>
+                <h5 style="opacity: 0.5">Войдите в приложение и зарегистрируйтесь</h5>
               </div>
             </div>
+            <div class="step">
+              <img src="../assets/li.svg" class="align-self-center" alt="">
+              <div class="d-flex flex-column pt-2 px-4">
+                <h5>Введите PIN код с экрана кинотеатра</h5>
+                <h5 style="opacity: 0.5">Заходите в зал кинотеатра и пропишите PIN код с экрана для подключения к игре</h5>
+              </div>
+            </div>
+            <div class="step">
+              <img src="../assets/li.svg" class="align-self-center" alt="">
+              <div class="d-flex flex-column pt-2 px-4">
+                <h5>Отвечайте на вопросы и зарабатывайте</h5>
+                <h5 style="opacity: 0.5">Отвечая на вопросы игры правильно, Вы зарабатываете бонусы которые сможете тратить на кассах кинотеатра</h5>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="section container-fluid how-play" data-aos="fade-up" data-aos-anchor-placement="top-center" style="overflow-x: hidden;">
@@ -154,9 +152,18 @@
             <img data-aos="fade-up" data-aos-delay="800" src="../assets/screen.png" class="soon-img-2" alt="">
             <img data-aos="fade-up" data-aos-delay="1300" src="../assets/8.png" class="soon-img" alt="">
           </div>
-          <div v-if="lang" data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-delay="800" class="col-md-5 order-md-first d-flex flex-column justify-content-center">
-            <h1>{{ ru.soonH1 }}</h1>
-            <h2>{{ ru.soonH2 }}</h2>
+          <div v-if="lang" data-aos="fade-up" data-aos-anchor="#contacts" data-aos-delay="800" class="col-md-5 order-md-first d-flex flex-column justify-content-between">
+            <h1>{{ ru.soonH1 }}
+              <h2>{{ ru.soonH2 }}</h2>
+            </h1>
+            <div class="md-display">
+              <div class="contacts d-flex flex-column">
+                <h5 class="my-4">По вопросу <br>сотрудничества</h5>
+                <h5 style="opacity: 0.5">+7 707 555 7437</h5>
+                <h5 style="opacity: 0.5">+7 701 678 0211</h5>
+                <h5 style="opacity: 0.5">info@kinoplay.kz</h5>
+              </div>
+            </div>
           </div>
           <div v-else data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-delay="800" class="col-md-5 order-md-first d-flex flex-column justify-content-center">
             <h1>{{ en.soonH1 }}</h1>
@@ -167,7 +174,7 @@
           <div class="col-4">
             <img src="../assets/logo.svg" class="logo-bottom" alt="logo">
           </div>
-          <div class="col-5 d-flex flex-column">
+          <div class="contacts col-5 d-flex flex-column">
             <h3 class="my-4">По вопросу сотрудничества</h3>
             <h3 style="opacity: 0.5">+7 707 555 7437</h3>
             <h3 style="opacity: 0.5">+7 701 678 0211</h3>
@@ -225,7 +232,7 @@ export default {
 
   h1 {
     font-weight: 600;
-    font-size: 5.5rem;
+    font-size: 4.75rem;
     line-height: 5.5rem;
     @media screen and (max-width: 320px) {
       font-size: 5rem;
@@ -234,7 +241,7 @@ export default {
 
   h3 {
     font-family: Helvetica, sans-serif;
-    font-size: 1.5rem;
+    font-size: 1rem;
     line-height: 2rem;
   }
 
@@ -246,19 +253,12 @@ export default {
     line-height: 1rem;
   }
 
-  nav {
-    .active {
-      color: #CD6BFC;
-      span {
-        padding-bottom: 3px;
-        border-bottom: 2px solid #CD6BFC;
-      }
-    }
-  }
-
   .about {
     .col-md-7 {
       justify-content: center;
+    }
+    h3 {
+      width: 75%;
     }
   }
 
@@ -307,57 +307,11 @@ export default {
     background: radial-gradient(247.00px at 83.63% 85.41%, #4D0EB1 0%, #2D0A8C 100%);
   }
 
-  .circle-4 {
-    position: absolute;
-    width: 7.25rem;
-    height: 7.25rem;
-    bottom: 10.5rem;
-    right: -7rem;
-    border-radius: 50%;
-    background: radial-gradient(125.55px at 83.63% 85.41%, #282A64 0%, #151641 100%);
-    box-shadow: .75rem 1.5rem 3.25rem #050512;
-  }
-
-  .circle-5 {
-    position: absolute;
-    width: 15rem;
-    height: 15rem;
-    border-radius: 50%;
-    top:110%;
-    left:-25%;
-    background: radial-gradient(315.11px at 83.63% 85.41%, #282A64 0%, #151641 100%);
-    box-shadow: .75rem 1.5rem 3.25rem #050512;
-  }
-
-  .circle-6 {
-    position: absolute;
-    width: 7.25rem;
-    height: 7.25rem;
-    top:250%;
-    left:0;
-    border-radius: 50%;
-    background: radial-gradient(151.81px at 83.63% 85.41%, #4D0EB1 0%, #2D0A8C 100%);
-  }
-
-  .circle-7 {
-    position: absolute;
-    width: 30rem;
-    height: 30rem;
-    top:150%;
-    left: 175%;
-    border-radius: 50%;
-    background: radial-gradient(483.34px at 83.63% 85.41%, #4D0EB1 0%, #2D0A8C 100%);
-  }
-
-  .circle-8 {
-    position: absolute;
-    width: 18rem;
-    height: 18rem;
-    top: 320%;
-    left: 150%;
-    border-radius: 50%;
-    background: radial-gradient(315.11px at 83.63% 85.41%, #282A64 0%, #151641 100%);
-    box-shadow: .75rem 1.5rem 3.25rem #050512;
+  .contacts {
+    h3,
+    h5 {
+      font-family: Gilroy;
+    }
   }
 
   .front-side {
@@ -365,15 +319,15 @@ export default {
   }
 
   .how-work {
-    padding-top: 5%;
+    padding-top: 7%;
     background-color: #151641;
   }
 
-  .how-play {
+  .how-play {;
     height: 100% !important;
     padding-top: 5%;
-    background: url("../assets/screens.png") no-repeat;
-    background-size: contain;
+    background: url("../assets/2b.png") no-repeat;
+    background-size: cover;
     padding-bottom: 60%;
   }
 
@@ -395,8 +349,8 @@ export default {
     display: inline-flex;
     position: fixed;
     z-index: 910;
-    margin-top: 47%;
-    margin-left: 90%;
+    bottom:2%;
+    right: 5%;
   }
 
   .lang-selector {
@@ -427,7 +381,7 @@ export default {
     position: absolute;
     top: 0;
     left: 2.15rem;
-    width: 8.25rem;
+    width: 7rem;
   }
 
   .md-display {
@@ -480,7 +434,7 @@ export default {
     border-right: none;
     box-sizing: border-box;
     border-radius: 2.5rem 0 0 2.5rem;
-    box-shadow: 20px 9px 20px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 20px 20px 70px 0px rgba(0, 0, 0, 0.5);
   }
 
   .soon-bottom {
@@ -488,9 +442,13 @@ export default {
   }
 
   .step {
+    display: -webkit-box;
     margin-top: 1rem;
     img {
       width: 2.25rem;
+    }
+    h5 {
+      width: 80% !important;
     }
   }
 
@@ -527,6 +485,15 @@ export default {
       padding: 0;
     }
 
+    h1 {
+      font-size: 5.75rem;
+    }
+
+    h3 {
+      font-size: 1.8rem;
+      width: 80% !important;
+    }
+
     .about {
       margin-top: 5rem;
       .col-md-7 {
@@ -537,6 +504,10 @@ export default {
     .about,
     .how-work,
     .how-play {
+      .container-fluid {
+        padding-right: 0;
+        padding-left: 0;
+      }
       height: inherit !important;
     }
 
@@ -569,10 +540,6 @@ export default {
         font-weight: normal;
         opacity: 0.5;
       }
-    }
-
-    .logo {
-      left:1.75rem;
     }
 
     .logo-bottom {
@@ -608,7 +575,7 @@ export default {
     }
 
     .num {
-      font-size: 1.25rem;
+      font-size: 1.5rem;
       margin-right: 6rem;
     }
 
@@ -622,7 +589,7 @@ export default {
           padding-bottom: 0 !important;
         }
         h5 {
-          font-size: 1.5rem;
+          font-size: 1.75rem;
           line-height: 2rem;
         }
       }
@@ -647,6 +614,10 @@ export default {
       margin-right: 0;
     }
 
+    .how-play-steps {
+      padding-bottom: 4rem;
+    }
+
     .icon-bar {
       width: 22px;
       height: 2px;
@@ -656,10 +627,8 @@ export default {
       margin-top: 4px
     }
 
-    .logo {
-      position: absolute;
-      top:-0.5rem;
-      left: 4.25rem;
+    .logo-mobile {
+      width: 8rem;
     }
 
     .md-display {
@@ -680,15 +649,18 @@ export default {
 
     .soon-bottom {
       display: inline-flex;
+      padding-bottom: 2rem;
     }
 
     .step {
       img {
-        width: 4rem;
+        width: 7rem;
       }
       h5 {
-        font-size: 1.75rem;
-        line-height: 2rem;
+        padding-top: 2rem;
+        font-size: 2rem;
+        line-height: 2.5rem;
+        width: 80% !important;
       }
     }
 
@@ -757,8 +729,8 @@ export default {
       border-radius: 50%;
       width: 10rem;
       height: 10rem;
-      right: 5rem;
-      top: 25rem;
+      right: 3rem;
+      top: 30rem;
       background: radial-gradient(64.01px at 83.63% 85.41%, #282A64 0%, #151641 100%);
       box-shadow: 10px 20px 50px #050512;
     }
@@ -766,10 +738,10 @@ export default {
     .circle-10 {
       position: absolute;
       border-radius: 50%;
-      width: 15rem;
-      height: 15rem;
-      left: -6rem;
-      top: 60rem;
+      width: 20rem;
+      height: 20rem;
+      left: -10rem;
+      top: 75rem;
       z-index: 400;
       background: radial-gradient(117.35px at 83.63% 85.41%, #4D0EB1 0%, #2D0A8C 100%);
     }
@@ -777,20 +749,20 @@ export default {
     .circle-11 {
       position: absolute;
       border-radius: 50%;
-      width: 14rem;
-      height: 14rem;
+      width: 18rem;
+      height: 18rem;
       left: -5rem;
-      top: 150rem;
+      top: 195rem;
       background: radial-gradient(93.55px at 83.63% 85.41%, #4D0EB1 0%, #2D0A8C 100%);
     }
 
     .circle-12 {
       position: absolute;
       border-radius: 50%;
-      width: 10rem;
-      height: 10rem;
-      left: -5rem;
-      top: 160rem;
+      width: 12rem;
+      height: 12rem;
+      left: -4rem;
+      top: 207rem;
       background: radial-gradient(68.93px at 83.63% 85.41%, #282A64 0%, #151641 100%);
       box-shadow: 10px 20px 50px #050512;
     }
