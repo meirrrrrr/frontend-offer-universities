@@ -15,7 +15,7 @@
             <a class="nav-link" href="#about"><span>&nbsp;&nbsp;О проект</span>е</a>
             <a class="nav-link" href="#how-work"><span>&nbsp;&nbsp;Как работае</span>т</a>
             <a class="nav-link" href="#how-play"><span>&nbsp;&nbsp;Как играт</span>ь</a>
-            <a class="nav-link active" href="#contacts"><span>&nbsp;&nbsp;Контакт</span>ы</a>
+            <a class="nav-link" href="#contacts"><span>&nbsp;&nbsp;Контакт</span>ы</a>
           </nav>
           <nav v-else class="nav float-right">
             <a class="nav-link" href="#about"><span>&nbsp;&nbsp;Abou</span>t</a>
@@ -33,7 +33,6 @@
               </button>
             </nav>
             <div class="collapse" id="navbarsExampleDefault">
-              <div class="container-fluid">
                 <ul v-if="lang" type="none">
                   <li><a href="#about">О проекте</a></li>
                   <li><a href="#how-work">Как работает</a></li>
@@ -50,7 +49,6 @@
                   <button class="lang-selector" v-on:click="lang=true"><span>&nbsp;R</span>U</button>
                   <button class="lang-selector" v-on:click="lang=false"><span>&nbsp;EN</span>G</button>
                 </div>
-              </div>
             </div>
           </div>
         </div>
@@ -525,6 +523,7 @@ export default {
     }
 
     .gap {
+      padding-bottom: 50%;
       padding-top: 100%;
     }
 
@@ -534,10 +533,14 @@ export default {
     }
 
     .language {
+      padding-left: 0;
       position: relative;
       margin-top:1rem;
+      left: 0;
       margin-left: 0;
       .lang-selector {
+        padding-left: 0;
+        margin-left: 0;
         font-size: 1.5rem;
         font-weight: normal;
         opacity: 0.5;
@@ -563,7 +566,8 @@ export default {
       width: 100%;
       ul {
         padding-top: 20%;
-        padding-left: .9rem;
+        padding-left: 0;
+        margin-left: 0;
         li {
           font-size: 3rem;
         }
@@ -582,6 +586,7 @@ export default {
     }
 
     .how-play {
+      background: url("../assets/3b.png") no-repeat;
       padding-bottom: 0;
       background-size: contain;
       .col-md-6 {
@@ -732,7 +737,7 @@ export default {
       width: 10rem;
       height: 10rem;
       right: 3rem;
-      top: 30rem;
+      top: 35rem;
       background: radial-gradient(64.01px at 83.63% 85.41%, #282A64 0%, #151641 100%);
       box-shadow: 10px 20px 50px #050512;
     }
@@ -740,8 +745,8 @@ export default {
     .circle-10 {
       position: absolute;
       border-radius: 50%;
-      width: 20rem;
-      height: 20rem;
+      width: 22rem;
+      height: 22rem;
       left: -10rem;
       top: 75rem;
       z-index: 400;
