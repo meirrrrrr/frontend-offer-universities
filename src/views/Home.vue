@@ -247,7 +247,7 @@ export default {
     font-family: Helvetica, sans-serif;
     font-style: normal;
     font-weight: normal;
-    font-size: .85rem;
+    font-size: .95rem;
     line-height: 1rem;
   }
 
@@ -422,7 +422,7 @@ export default {
   }
 
   .num {
-    font-size: .75rem;
+    font-size: .85rem;
     color: #FF34DA;
     margin-left: 1rem;
     margin-right: 3rem;
