@@ -59,7 +59,7 @@
           <div class="col-md-5 d-flex flex-column justify-content-center">
             <h1 v-if="lang">{{ ru.aboutH1 }}</h1>
             <h1 v-else>{{ en.aboutH1 }}</h1>
-            <h3 class="mt-4" v-if="lang">{{ ru.aboutText }}</h3>
+            <h3 class="mt-3" v-if="lang">{{ ru.aboutText }}</h3>
             <h3 class="mt-4" v-else>{{ en.aboutText }}</h3>
           </div>
           <div class="col-md-7 d-flex">
@@ -82,7 +82,7 @@
           <div class="col-md-7 order-md-last d-flex flex-column" data-aos="fade-left" data-aos-delay="1500" >
             <h1 v-if="lang" class="w-75 xs-display">{{ ru.howWorkH1 }}</h1>
             <h1 v-else class="w-75 xs-display">{{ en.howWorkH1 }}</h1>
-            <img src="../assets/screen.png" class="soon-img-2" alt="">
+            <img src="../assets/screen.png" class="soon-img-2 xl-w-100" alt="">
           </div>
           <div class="col-md-5 order-md-first d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="800" >
               <h1 v-if="lang" class="md-display">{{ ru.howWorkH1 }}</h1>
@@ -231,7 +231,7 @@ export default {
   h1 {
     font-weight: 600;
     font-size: 4.75rem;
-    line-height: 5.5rem;
+    line-height: 4.25rem;
     @media screen and (max-width: 320px) {
       font-size: 5rem;
     }
@@ -318,7 +318,14 @@ export default {
 
   .how-work {
     padding-top: 7%;
+    padding-right: 0;
     background-color: #151641;
+    .container-fluid {
+      padding-right: 0;
+    }
+    .order-md-last {
+      padding-right: 0;
+    }
   }
 
   .how-play {;
@@ -422,14 +429,14 @@ export default {
   }
 
   .soon-img {
-    width: 45%;
+    width: 40%;
     position: absolute;
-    bottom:-12%;
-    left:-10rem;
+    bottom:-11%;
+    left:-8rem;
   }
 
   .soon-img-2 {
-    width: 109%;
+    width: 100%;
     border: 1rem solid #0D0C26;
     border-right: none;
     box-sizing: border-box;
@@ -447,9 +454,10 @@ export default {
     img {
       width: 2.25rem;
     }
-    h5 {
-      width: 80% !important;
-    }
+    /*h5 {*/
+    /*  width: 65% !important;*/
+    /*}*/
+    width: 60%;
   }
 
   .xs-display {
@@ -487,6 +495,7 @@ export default {
 
     h1 {
       font-size: 5.75rem;
+      line-height: 5rem;
     }
 
     h3 {
@@ -643,14 +652,15 @@ export default {
     }
 
     .soon-img {
-      width: 40%;
+      width: 35%;
       position: absolute;
-      top:21%;
-      left:-10%;
+      top:24%;
+      left:-5%;
     }
 
     .soon-img-2 {
-      width: 100%;
+      width: 90%;
+      float:right;
       margin-top: 10%;
     }
 
@@ -667,12 +677,15 @@ export default {
         padding-top: 2rem;
         font-size: 2rem;
         line-height: 2.5rem;
-        width: 80% !important;
       }
     }
 
     .xs-display {
       display: flex;
+    }
+
+    .xl-w-100 {
+      width: 100% !important;
     }
 
     /*Animation*/
@@ -759,7 +772,7 @@ export default {
       width: 18rem;
       height: 18rem;
       left: -5rem;
-      top: 205rem;
+      top: 210rem;
       background: radial-gradient(93.55px at 83.63% 85.41%, #4D0EB1 0%, #2D0A8C 100%);
     }
 
@@ -769,7 +782,7 @@ export default {
       width: 12rem;
       height: 12rem;
       left: -4rem;
-      top: 217rem;
+      top: 222rem;
       background: radial-gradient(68.93px at 83.63% 85.41%, #282A64 0%, #151641 100%);
       box-shadow: 10px 20px 50px #050512;
     }
