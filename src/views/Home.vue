@@ -144,7 +144,7 @@
           </div>
         </div>
       </div>
-      <div class="section container-fluid how-work h-100 w-100" style="overflow: hidden">
+      <div class="section container-fluid soon how-work h-100 w-100" style="overflow: hidden">
         <div class="container-fluid row mx-0" id="contacts">
           <div class="col-md-7 order-md-last">
             <img data-aos="fade-up" data-aos-delay="800" src="../assets/screen.png" class="soon-img-2" alt="">
@@ -426,6 +426,14 @@ export default {
     color: #FF34DA;
     margin-left: 1rem;
     margin-right: 3rem;
+  }
+
+  .soon {
+    .soon-img-2 {
+      width: 95%;
+      float: right;
+    }
+    padding-top: 10%;
   }
 
   .soon-img {
