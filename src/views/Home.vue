@@ -25,7 +25,7 @@
           </nav>
           <div class="nav-toggle">
             <nav class="navbar-dark">
-              <img src="../assets/logo_mobile.svg" class="logo-mobile pt-2" alt="logo">
+              <img src="../assets/logo.svg" class="logo-mobile pt-2" alt="logo">
               <button class="navbar-toggler collapsed float-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="icon-bar top-bar"></span>
                 <span class="icon-bar middle-bar"></span>
@@ -313,7 +313,9 @@ export default {
   }
 
   .front-side {
-    width: 28rem;
+    width: 18rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
   }
 
   .how-work {
@@ -356,12 +358,11 @@ export default {
     display: inline-flex;
     position: fixed;
     z-index: 910;
-    bottom:2%;
+    bottom:10%;
     right: 5%;
   }
 
   .lang-selector {
-    font-weight: bold;
     font-size: .75rem;
     border: none;
     background: none;
@@ -385,21 +386,26 @@ export default {
   }
 
   .logo {
-    position: absolute;
-    top: 0;
-    left: 2.15rem;
-    width: 7rem;
+    width: 5rem;
+    padding-left: 15px;
   }
 
   .md-display {
     display: flex;
   }
 
+  .nav {
+    position: absolute;
+    right: 3%;
+    top:0;
+    padding-top: .75rem;
+  }
+
   .nav-link:hover,
   .nav-link:active {
     span {
       padding-bottom: 3px;
-      border-bottom: 2px solid #CD6BFC;
+      border-bottom: .1rem solid #CD6BFC;
     }
     color: #CD6BFC;
   }
@@ -437,10 +443,10 @@ export default {
   }
 
   .soon-img {
-    width: 40%;
+    width: 22%;
     position: absolute;
-    bottom:-11%;
-    left:-8rem;
+    bottom:0;
+    left:0;
   }
 
   .soon-img-2 {
@@ -657,13 +663,6 @@ export default {
 
     .md-display {
       display: none;
-    }
-
-    .soon-img {
-      width: 35%;
-      position: absolute;
-      top:24%;
-      left:-5%;
     }
 
     .soon-img-2 {
