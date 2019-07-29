@@ -238,13 +238,13 @@ export default {
   }
 
   h3 {
-    font-family: Helvetica, sans-serif;
+    font-family: sf-ui-display;
     font-size: 1rem;
     line-height: 2rem;
   }
 
   h5 {
-    font-family: Helvetica, sans-serif;
+    font-family: sf-ui-display;
     font-style: normal;
     font-weight: normal;
     font-size: .95rem;
