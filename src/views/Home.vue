@@ -779,7 +779,7 @@ export default {
       width: 18rem;
       height: 18rem;
       left: -5rem;
-      top: 210rem;
+      top: 208rem;
       background: radial-gradient(93.55px at 83.63% 85.41%, #4D0EB1 0%, #2D0A8C 100%);
     }
 
@@ -789,7 +789,7 @@ export default {
       width: 12rem;
       height: 12rem;
       left: -4rem;
-      top: 222rem;
+      top: 220rem;
       background: radial-gradient(68.93px at 83.63% 85.41%, #282A64 0%, #151641 100%);
       box-shadow: 10px 20px 50px #050512;
     }
