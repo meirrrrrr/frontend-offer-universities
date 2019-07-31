@@ -88,21 +88,21 @@
               <h1 v-if="lang" class="md-display">{{ ru.howWorkH1 }}</h1>
               <h1 v-else class="md-display">{{ en.howWorkH1 }}</h1>
             <div class="step pt-5">
-              <img src="../assets/li.svg" class="align-self-center" alt="">
+              <img src="../assets/li.svg" alt="">
               <div class="d-flex flex-column pt-2 px-4">
                 <h5>Скачайте приложение</h5>
                 <h5 style="opacity: 0.5">Войдите в приложение и зарегистрируйтесь</h5>
               </div>
             </div>
             <div class="step">
-              <img src="../assets/li.svg" class="align-self-center" alt="">
+              <img src="../assets/li.svg" alt="">
               <div class="d-flex flex-column pt-2 px-4">
                 <h5>Введите PIN код с экрана кинотеатра</h5>
                 <h5 style="opacity: 0.5">Заходите в зал кинотеатра и пропишите PIN код с экрана для подключения к игре</h5>
               </div>
             </div>
             <div class="step">
-              <img src="../assets/li.svg" class="align-self-center" alt="">
+              <img src="../assets/li.svg" alt="">
               <div class="d-flex flex-column pt-2 px-4">
                 <h5>Отвечайте на вопросы и зарабатывайте</h5>
                 <h5 style="opacity: 0.5">Отвечая на вопросы игры правильно, Вы зарабатываете бонусы которые сможете тратить на кассах кинотеатра</h5>
@@ -124,20 +124,20 @@
             <div class="row" id="steps">
               <div class="col-md-6 col-xl-9">
                 <div data-aos="fade-up" data-aos-delay="850" data-aos-anchor="#steps" class="how-play-steps">
-                  <h5 class="py-3"><span class="num">01</span></h5>
-                  <h5 class="steps py-3">Для того чтобы войти в игру, введите PIN код с экранов кинотеатров</h5>
+                  <h5><span class="num">01</span></h5>
+                  <h5 class="steps">Для того чтобы войти в игру, введите PIN код с экранов кинотеатров</h5>
                 </div>
                 <div data-aos="fade-up" data-aos-delay="900" data-aos-anchor="#steps" class="how-play-steps">
-                  <h5 class="py-3"><span class="num">02</span></h5>
-                  <h5 class="steps py-3">Отвечайте на вопросы и зарабатывайте баллы, которые вы сможете потратить в кассах кинотеатра</h5>
+                  <h5><span class="num">02</span></h5>
+                  <h5 class="steps">Отвечайте на вопросы и зарабатывайте баллы, которые вы сможете потратить в кассах кинотеатра</h5>
                 </div>
                 <div data-aos="fade-up" data-aos-delay="950" data-aos-anchor="#steps" class="how-play-steps">
-                  <h5 class="py-3"><span class="num">03</span></h5>
-                  <h5 class="steps py-3">Подключитесь к интернету</h5>
+                  <h5><span class="num">03</span></h5>
+                  <h5 class="steps">Подключитесь к интернету</h5>
                 </div>
                 <div data-aos="fade-up" data-aos-delay="1000" data-aos-anchor="#steps" class="how-play-steps">
-                  <h5 class="py-3"><span class="num">04</span></h5>
-                  <h5 class="steps py-3">В зависимости от вашего места получайте баллы</h5>
+                  <h5><span class="num">04</span></h5>
+                  <h5 class="steps">В зависимости от вашего места получайте баллы</h5>
                 </div>
               </div>
             </div>
@@ -170,7 +170,7 @@
         </div>
         <div class="soon-bottom mt-5 row container">
           <div class="col-4">
-            <img src="../assets/logo.svg" class="logo-bottom" alt="logo">
+            <img src="../assets/logo.svg" class="logo-mobile" alt="logo">
           </div>
           <div class="contacts col-5 d-flex flex-column">
             <h3 class="my-4">По вопросу сотрудничества</h3>
@@ -224,12 +224,7 @@ export default {
     font-family: Gilroy;
   }
 
-  li {
-    font-weight: 600;
-  }
-
   h1 {
-    font-weight: 600;
     font-size: 4.75rem;
     line-height: 4.25rem;
     @media screen and (max-width: 320px) {
@@ -238,17 +233,27 @@ export default {
   }
 
   h3 {
-    font-family: sf-ui-display;
     font-size: 1rem;
     line-height: 2rem;
   }
 
   h5 {
-    font-family: sf-ui-display;
     font-style: normal;
     font-weight: normal;
     font-size: .95rem;
     line-height: 1rem;
+  }
+
+  h3,
+  h5
+  {
+    font-family: sf-ui-display;
+  }
+
+  li,
+  h1
+  {
+    font-weight: 600;
   }
 
   .about {
@@ -260,48 +265,51 @@ export default {
     }
   }
 
-  .about,
-  .how-play,
-  .how-work {
-    height: 100%;
+  .back-side,
+  .circle-1,
+  .circle-2,
+  .circle-3,
+  .nav,
+  .soon-img
+  {
+    position: absolute;
   }
 
   .back-side {
-    position: absolute;
     width: 37rem;
     top:0;
     left: 14rem;
   }
 
+  .circle-1,
+  .circle-2,
+  .circle-3 {
+    border-radius: 50%;
+  }
+
   .circle-1 {
-    position: absolute;
     z-index: 300;
     width: 18rem;
     height: 18rem;
     bottom:-5rem;
     left: 3.25rem;
-    border-radius: 50%;
     background: radial-gradient(301.16px at 83.63% 85.41%, #4D0EB1 0%, #2D0A8C 100%);
   }
 
   .circle-2 {
-    position: absolute;
     width: 14rem;
     height: 14rem;
     top: 12rem;
     left: 7.25rem;
-    border-radius: 50%;
     background: radial-gradient(205.97px at 83.63% 85.41%, #282A64 0%, #151641 100%);
     box-shadow: 10px 20px 50px #050512;
   }
 
   .circle-3 {
-    position: absolute;
     width: 14rem;
     height: 14rem;
     right:2rem;
     top:4rem;
-    border-radius: 50%;
     background: radial-gradient(247.00px at 83.63% 85.41%, #4D0EB1 0%, #2D0A8C 100%);
   }
 
@@ -342,6 +350,10 @@ export default {
     display: inline-flex;
     .steps {
       width: 65%;
+    }
+    h5 {
+      padding-bottom: 1rem;
+      padding-top: 1rem;
     }
   }
 
@@ -395,7 +407,6 @@ export default {
   }
 
   .nav {
-    position: absolute;
     right: 3%;
     top:0;
     padding-top: .75rem;
@@ -444,7 +455,6 @@ export default {
 
   .soon-img {
     width: 22%;
-    position: absolute;
     bottom:0;
     left:0;
   }
@@ -458,21 +468,19 @@ export default {
     box-shadow: 20px 20px 70px 0px rgba(0, 0, 0, 0.5);
   }
 
-  .soon-bottom {
+  .soon-bottom,
+  .xs-display
+  {
     display: none;
   }
 
   .step {
     display: -webkit-box;
     margin-top: 1rem;
+    width: 60%;
     img {
       width: 2.25rem;
     }
-    width: 60%;
-  }
-
-  .xs-display {
-    display: none;
   }
 
   @media screen and (max-width:768px) {
@@ -531,59 +539,6 @@ export default {
       width: 100%;
     }
 
-    .language {
-      padding-left: 0;
-      position: relative;
-      margin-top:1rem;
-      left: 0;
-      margin-left: 0;
-      .lang-selector {
-        padding-left: 0;
-        margin-left: 0;
-        font-size: 1.5rem;
-        font-weight: normal;
-        opacity: 0.5;
-      }
-    }
-
-    .logo-bottom {
-      width: 8rem;
-      margin: 0;
-    }
-
-    .nav-link {
-      display:none;
-    }
-
-    .navbar-toggler {
-      border: none;
-      background: transparent !important;
-    }
-
-    .nav-toggle {
-      display: block;
-      width: 100%;
-      ul {
-        padding-top: 20%;
-        padding-left: 0;
-        margin-left: 0;
-        li {
-          font-size: 3rem;
-        }
-      }
-    }
-
-    .navigation {
-      position: relative;
-      margin-top: 3%;
-      margin-bottom: 3%;
-    }
-
-    .num {
-      font-size: 1.5rem;
-      margin-right: 6rem;
-    }
-
     .how-play {
       background: url("../assets/3b.png") no-repeat;
       padding-bottom: 0;
@@ -608,16 +563,12 @@ export default {
       .order-md-first {
         padding-bottom: 10%;
       }
-      .order-md-last {
+      .order-md-last,
+      .container-fluid
+      {
         padding-right: 0;
-        margin-right: 0;
-      }
-      .container-fluid {
-        padding-right: 0;
-        margin-right: 0;
       }
       padding-right: 0;
-      margin-right: 0;
     }
 
     .how-play-steps {
@@ -637,8 +588,55 @@ export default {
       width: 8rem;
     }
 
-    .md-display {
+    .language,
+    .navigation
+    {
+      position: relative;
+    }
+
+    .language {
+      padding-left: 0;
+      margin-top:1rem;
+      left: 0;
+      margin-left: 0;
+      .lang-selector {
+        padding-left: 0;
+        font-size: 1.5rem;
+        font-weight: normal;
+        opacity: 0.5;
+      }
+    }
+
+    .md-display,
+    .nav-link{
       display: none;
+    }
+
+    .navbar-toggler {
+      border: none;
+      background: transparent !important;
+    }
+
+    .nav-toggle {
+      display: block;
+      width: 100%;
+      ul {
+        padding-top: 20%;
+        padding-left: 0;
+        li {
+          font-size: 3rem;
+        }
+      }
+    }
+
+    .navigation {
+      margin-top: 3%;
+      margin-bottom: 3%;
+    }
+
+    .num {
+      font-size: 1.5rem;
+      margin-right: 6rem;
     }
 
     .soon-img-2 {
@@ -671,7 +669,7 @@ export default {
       width: 100% !important;
     }
 
-    /*Animation*/
+    /*Animation of Nav Hamburger*/
 
     .navbar-toggler .top-bar {
       transform: rotate(45deg);
@@ -727,9 +725,16 @@ export default {
   }
 
   @media screen and (max-width: 767px) {
-    .circle-9 {
+    .circle-9,
+    .circle-10,
+    .circle-11,
+    .circle-12
+    {
       position: absolute;
       border-radius: 50%;
+    }
+
+    .circle-9 {
       width: 10rem;
       height: 10rem;
       right: 3rem;
@@ -739,8 +744,6 @@ export default {
     }
 
     .circle-10 {
-      position: absolute;
-      border-radius: 50%;
       width: 22rem;
       height: 22rem;
       left: -10rem;
@@ -750,8 +753,6 @@ export default {
     }
 
     .circle-11 {
-      position: absolute;
-      border-radius: 50%;
       width: 18rem;
       height: 18rem;
       left: -5rem;
@@ -760,8 +761,6 @@ export default {
     }
 
     .circle-12 {
-      position: absolute;
-      border-radius: 50%;
       width: 12rem;
       height: 12rem;
       left: -4rem;

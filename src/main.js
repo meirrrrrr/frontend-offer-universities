@@ -6,10 +6,10 @@ import store from './store'
 import './main.scss'
 import AOS from 'aos'
 import VueFullPage from 'vue-fullpage.js'
+import 'aos/dist/aos.css'
 
 if (screen.width > 768) {
   Vue.use(VueFullPage)
-  require('aos/dist/aos.css')
 }
 
 Vue.config.productionTip = false
@@ -19,7 +19,10 @@ new Vue({
   store,
   el: '#app',
   created () {
-    AOS.init()
+    AOS.init({
+      mirror: true,
+      disable: 'mobile'
+    })
   },
   render: h => h(App)
 }).$mount('#app')
