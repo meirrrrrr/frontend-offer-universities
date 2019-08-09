@@ -67,7 +67,7 @@
             <div class="circle-2" data-aos="fade-down" data-aos-duration="3000"></div>
             <div class="circle-3" data-aos="fade-left" data-aos-duration="3000"></div>
             <div class="circle-4" data-aos="fade-left" data-aos-duration="3000"></div>
-            <div class="md-display">
+            <div>
               <img src="../assets/8.png" data-aos="zoom-in" data-aos-delay="1000" class="front-side" style="z-index: 200" alt="">
               <img src="../assets/9.png" data-aos="fade-right" data-aos-delay="1300" data-aos-duration="3000" class="back-side" alt="">
             </div>
@@ -188,13 +188,11 @@
 <script>
 export default {
   name: 'home',
-  components: {
-
-  },
   data () {
     return {
       options: {
-        scrollBar: true
+        scrollBar: true,
+        scrollingSpeed: 1000
       },
       lang: true,
       en: {
