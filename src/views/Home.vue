@@ -67,7 +67,7 @@
             <div class="circle-2" data-aos="fade-down" data-aos-duration="3000"></div>
             <div class="circle-3" data-aos="fade-left" data-aos-duration="3000"></div>
             <div class="circle-4" data-aos="fade-left" data-aos-duration="3000"></div>
-            <div>
+            <div class="md-display">
               <img src="../assets/8.png" data-aos="zoom-in" data-aos-delay="1000" class="front-side" style="z-index: 200" alt="">
               <img src="../assets/9.png" data-aos="fade-right" data-aos-delay="1300" data-aos-duration="3000" class="back-side" alt="">
             </div>
@@ -401,7 +401,7 @@ export default {
   }
 
   .md-display {
-    display: flex;
+    display: inline-flex;
   }
 
   .nav {

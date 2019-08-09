@@ -32,6 +32,14 @@
       font-size: 10px;
     }
 
+    @media screen and (min-width: 780px) {
+      font-size: 8px;
+    }
+
+    @media screen and (min-width: 860px) {
+      font-size: 10px;
+    }
+
     @media screen and (min-width:1024px) {
       font-size: 12px;
     }
@@ -62,6 +70,10 @@
 
     @media screen and (min-width: 3840px) {
       font-size: 42px;
+    }
+
+    @media screen and (min-width: 4200px) {
+      font-size: 56px;
     }
   }
 
