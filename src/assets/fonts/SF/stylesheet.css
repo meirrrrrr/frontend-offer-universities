@@ -1,37 +1,5 @@
-/*@font-face {*/
-/*    font-family: 'sf-ui-display';*/
-/*    src: url('sf-ui-display-heavy-586470160b9e5.otf');*/
-/*    src: local('sf-ui-display-heavy');*/
-/*    font-weight: 900;*/
-/*    font-style: normal;*/
-/*}*/
-
-/*@font-face {*/
-/*    font-family: 'sf-ui-display';*/
-/*    src: url('sf-ui-display-semibold-58646eddcae92.otf');*/
-/*    src: local('sf-ui-display-semibold');*/
-/*    font-weight: 600;*/
-/*    font-style: normal;*/
-/*}*/
-
-/*@font-face {*/
-/*    font-family: 'sf-ui-display';*/
-/*    src: url('sf-ui-display-light-58646b33e0551.otf');*/
-/*    src: local('sf-ui-display-light');*/
-/*    font-weight: 300;*/
-/*    font-style: normal;*/
-/*}*/
-
 @font-face {
     font-family: 'sf-ui-display';
+    font-display: auto;
     src: url('sf-ui-display-medium-58646be638f96.otf');
 }
-
-
-/*@font-face {*/
-/*    font-family: 'sf-ui-display';*/
-/*    src: url('sf-ui-display-bold-58646a511e3d9.otf');*/
-/*    src: local('sf-ui-display-bold');*/
-/*    font-weight: bold;*/
-/*    font-style: normal;*/
-/*}*/
