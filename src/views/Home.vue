@@ -54,7 +54,7 @@
         </div>
       </div>
     <full-page ref="fullpage" :options="options" id="fullpage">
-      <div class="section container-fluid h-100 about" style="overflow: hidden">
+      <div class="section container-fluid h-100 about" @keypress="$refs.fullpage.api.setScrollingSpeed(1000)" @wheel="$refs.fullpage.api.setScrollingSpeed(1000)" style="overflow: hidden">
         <div class="container-fluid row mx-0" id="about">
           <div class="col-md-5 d-flex flex-column justify-content-center">
             <h1 v-if="lang">{{ ru.aboutH1 }}</h1>
@@ -77,7 +77,7 @@
           </div>
         </div>
       </div>
-      <div class="section container-fluid how-work h-100 w-100" id="how-work" style="overflow-x: hidden">
+      <div class="section container-fluid how-work h-100 w-100" @keypress="$refs.fullpage.api.setScrollingSpeed(1000)" @wheel="$refs.fullpage.api.setScrollingSpeed(1000)" id="how-work" style="overflow-x: hidden">
         <div class="container-fluid row mx-0" >
           <div class="col-md-7 order-md-last d-flex flex-column" data-aos="fade-left" data-aos-delay="1500" >
             <h1 v-if="lang" class="w-75 xs-display">{{ ru.howWorkH1 }}</h1>
@@ -111,7 +111,7 @@
           </div>
         </div>
       </div>
-      <div class="section container-fluid how-play" data-aos="fade-up" data-aos-anchor-placement="top-center" style="overflow-x: hidden;">
+      <div class="section container-fluid how-play" @wheel="$refs.fullpage.api.setScrollingSpeed(3000)" data-aos="fade-up" data-aos-anchor-placement="top-center" style="overflow-x: hidden;">
         <div class="container-fluid row mx-0" id="how-play">
           <div class="col-md-6 order-md-last gap"></div>
           <div class="col-md-6 order-md-first">
@@ -144,7 +144,7 @@
           </div>
         </div>
       </div>
-      <div class="section container-fluid soon how-work h-100 w-100" style="overflow: hidden">
+      <div class="section container-fluid soon how-work h-100 w-100" @keypress="$refs.fullpage.api.setScrollingSpeed(1000)" @wheel="$refs.fullpage.api.setScrollingSpeed(1000)" style="overflow: hidden">
         <div class="container-fluid row mx-0" id="contacts">
           <div class="col-md-7 order-md-last">
             <img data-aos="fade-up" data-aos-delay="800" src="../assets/screen.png" class="soon-img-2" alt="">
@@ -191,6 +191,7 @@ export default {
   data () {
     return {
       options: {
+        licenseKey: 'YOUR_KEY_HERE',
         scrollBar: true,
         scrollingSpeed: 1000
       },
