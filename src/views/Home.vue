@@ -67,7 +67,7 @@
             <div class="circle-2" data-aos="fade-down" data-aos-duration="3000"></div>
             <div class="circle-3" data-aos="fade-left" data-aos-duration="3000"></div>
             <div class="circle-4" data-aos="fade-left" data-aos-duration="3000"></div>
-            <div class="md-display">
+            <div class="md-display justify-content-center">
               <img src="../assets/8.png" data-aos="zoom-in" data-aos-delay="1000" class="front-side" style="z-index: 200" alt="">
               <img src="../assets/9.png" data-aos="fade-right" data-aos-delay="1300" data-aos-duration="3000" class="back-side" alt="">
             </div>
@@ -111,11 +111,11 @@
           </div>
         </div>
       </div>
-      <div class="section container-fluid how-play" @wheel="$refs.fullpage.api.setScrollingSpeed(3000)" data-aos="fade-up" data-aos-anchor-placement="top-center" style="overflow-x: hidden;">
-        <div class="container-fluid row mx-0" id="how-play">
+      <div class="section container-fluid how-play" @wheel="$refs.fullpage.api.setScrollingSpeed(3000)" id="how-play" data-aos="fade-up" data-aos-anchor-placement="top-center" style="overflow-x: hidden;">
+        <div class="container-fluid row mx-0">
           <div class="col-md-6 order-md-last gap"></div>
           <div class="col-md-6 order-md-first">
-            <h1 class="py-5" v-if="lang" data-aos="fade-up" data-aos-delay="800">{{ ru.howPlayH1 }}</h1>
+            <h1 class="py-5" v-if="lang" data-aos="fade-up" data-aos-anchor="#how-play" data-aos-delay="800">{{ ru.howPlayH1 }}</h1>
             <h1 class="py-5" v-else data-aos="fade-up" data-aos-delay="800">{{ en.howPlayH1 }}</h1>
             <div class="circle-5"></div>
             <div class="circle-6"></div>
@@ -144,8 +144,8 @@
           </div>
         </div>
       </div>
-      <div class="section container-fluid soon how-work h-100 w-100" @keypress="$refs.fullpage.api.setScrollingSpeed(1000)" @wheel="$refs.fullpage.api.setScrollingSpeed(1000)" style="overflow: hidden">
-        <div class="container-fluid row mx-0" id="contacts">
+      <div class="section container-fluid soon how-work h-100 w-100" @keypress="$refs.fullpage.api.setScrollingSpeed(1000)" id="contacts" @wheel="$refs.fullpage.api.setScrollingSpeed(1000)" style="overflow: hidden">
+        <div class="container-fluid row mx-0">
           <div class="col-md-7 order-md-last">
             <img data-aos="fade-up" data-aos-delay="800" src="../assets/screen.png" class="soon-img-2" alt="">
             <img data-aos="fade-up" data-aos-delay="1300" src="../assets/8.png" class="soon-img" alt="">
@@ -275,9 +275,9 @@ export default {
   }
 
   .back-side {
-    width: 37rem;
+    width: 33%;
     top:0;
-    left: 14rem;
+    left: 28rem;
   }
 
   .circle-1,
@@ -320,7 +320,7 @@ export default {
   }
 
   .front-side {
-    width: 18rem;
+    width: 35%;
     padding-top: 5rem;
     padding-bottom: 5rem;
   }
