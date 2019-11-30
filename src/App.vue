@@ -8,7 +8,7 @@
   html,
   body,
   #app {
-    background: #0C0C24;
+    background: #30304A;
     color: #ffffff;
     padding: 0;
     margin: 0;
