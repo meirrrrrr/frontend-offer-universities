@@ -7,6 +7,7 @@ import './main.scss'
 import AOS from 'aos'
 import VueFullPage from 'vue-fullpage.js'
 import 'aos/dist/aos.css'
+window.axios = require('axios')
 
 if (screen.width > 768) {
   Vue.use(VueFullPage)

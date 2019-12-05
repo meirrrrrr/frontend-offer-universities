@@ -10,7 +10,6 @@
           <nav class="nav float-right">
             <a class="nav-link" href="#about"><span>&nbsp;&nbsp;Abou</span>t</a>
             <a class="nav-link" href="#how-work"><span>&nbsp;&nbsp;How it work</span>s</a>
-            <a class="nav-link" href="#how-play"><span>&nbsp;&nbsp;How to pla</span>y</a>
             <a class="nav-link" href="#contacts"><span>&nbsp;&nbsp;Contact</span>s</a>
           </nav>
         </div>
@@ -29,9 +28,6 @@
             <div class="circle-4" data-aos="fade-left" data-aos-duration="3000"></div>
             <div class="md-display text-center">
               <img src="https://images.vexels.com/media/users/3/128480/isolated/preview/0582ce1095705aa691a4938302de2dce-purple-magnifier-line-icon-svg-by-vexels.png" data-aos="zoom-in" data-aos-delay="1000" class="w-100 front-side" style="z-index: 999" alt="">
-            </div>
-            <div class="xs-display my-5">
-              <img src="../assets/first_block.png" class="w-100 h-100" style="z-index: 200" alt="">
             </div>
           </div>
         </div>
@@ -54,7 +50,14 @@
             <br>
             <h2>Do you want to study in other city?
               <input style="zoom:2" type="checkbox"></h2>
-            <button class="btn btn-dark w-50">Search</button>
+            <button class="btn btn-dark w-50" @click="getData">Search</button>
+          </div>
+          <div class="col-md-7">
+            <div v-for="uni in recommendations">
+              <h1>{{ uni.university_name }}</h1>
+              <h2>{{ uni.code }} - {{ uni.name }}</h2>
+              <h2>{{ uni.city_name }}</h2>
+            </div>
           </div>
         </div>
       </div>
@@ -75,10 +78,10 @@
           <div class="col-4">
           </div>
           <div class="contacts col-5 d-flex flex-column">
-            <h3 class="my-4">По вопросу сотрудничества</h3>
-            <h3 style="opacity: 0.5">+7 707 555 7437</h3>
+            <h3 class="my-4">Contacts</h3>
+            <h3 style="opacity: 0.5">+7 702 759 0126</h3>
             <h3 style="opacity: 0.5">+7 701 678 0211</h3>
-            <h3 style="opacity: 0.5">info@kinoplay.kz</h3>
+            <h3 style="opacity: 0.5">emainfo@gmail.com</h3>
           </div>
         </div>
       </div>
@@ -113,8 +116,18 @@ export default {
               id: 1,
               name: 'Almaty'
           }
-      }
+      },
+      recommendations: 'NIXUA'
     }
+  },
+  methods: {
+      getData () {
+          const api = 'http://130.61.58.200/api/v1/univer/recommendations/?first_subject=a&second_subject=b&city=ALL'
+          axios.get(api).then((response) => {
+              console.log(response.data)
+              this.recommendations = response.data
+          })
+      }
   }
 }
 </script>
@@ -200,7 +213,7 @@ export default {
   .circle-2 {
     width: 14rem;
     height: 14rem;
-    top: 12rem;
+    top: 0rem;
     left: -2rem;
     background: radial-gradient(205.97px at 83.63% 85.41%, #E788EE 0%, #151641 100%);
     box-shadow: 10px 20px 50px #050512;
@@ -236,25 +249,6 @@ export default {
     }
     .order-md-last {
       padding-right: 0;
-    }
-  }
-
-  .how-play {;
-    height: 100% !important;
-    padding-top: 5%;
-    background: url("../assets/2b.png") no-repeat;
-    background-size: cover;
-    padding-bottom: 60%;
-  }
-
-  .how-play-steps {
-    display: inline-flex;
-    .steps {
-      width: 65%;
-    }
-    h5 {
-      padding-bottom: 1rem;
-      padding-top: 1rem;
     }
   }
 
