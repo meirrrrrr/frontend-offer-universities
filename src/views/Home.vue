@@ -52,11 +52,42 @@
               <input style="zoom:2" type="checkbox"></h2>
             <button class="btn btn-dark w-50" @click="getData">Search</button>
           </div>
-          <div class="col-md-7">
-            <div v-for="uni in recommendations">
-              <h1>{{ uni.university_name }}</h1>
-              <h2>{{ uni.code }} - {{ uni.name }}</h2>
-              <h2>{{ uni.city_name }}</h2>
+          <div v-if="recommendations" class="col-md-7" data-aos="fade-left">
+            <div class="mx-5 p-5" style="background-color: #30304A">
+              <h4>Find {{ recommendations.length }} professions:</h4>
+              <hr>
+              <h1>{{ recommendations[page].profession }}</h1>
+              <hr>
+              <h2>Specialities:</h2>
+              <div class="specialities my-2" v-for="spec in recommendations[page].specialities">
+                <button class="btn btn-dark" type="button" data-toggle="collapse"
+                        :data-target="'#example'+spec.code" aria-expanded="false" :aria-controls="'example'+spec.code">
+                  {{ spec.name }}
+                </button>
+                <div class="collapse bg-secondary" :id="'example'+spec.code">
+                  <div class="p-2">
+                    <h3>Code of speciality: {{ spec.code }}</h3>
+                    <h3>Universities:</h3>
+                    <div class="universities my-2" v-for="uni in spec.universities">
+                      <button class="btn btn-dark" type="button" data-toggle="collapse"
+                              :data-target="'#example'+uni.code" aria-expanded="false" :aria-controls="'example'+uni.code">
+                        {{ uni.name }}
+                      </button>
+                      <div class="collapse bg-secondary" :id="'example'+uni.code">
+                        <div class="p-2">
+                          <h3>City: {{ uni.city }}</h3>
+                          <h3>Total grants for this speciality: {{ uni.grant_total }} (rus:{{ uni.grant_rus }}, kaz:{{ uni.grant_kaz }})</h3>
+                          <h3><a style="text-decoration:underline;" target="_blank" :href="'http://'+uni.site">Click here to visit their website</a></h3>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex justify-content-between m-5">
+                <button class="btn btn-dark w-25" @click="page--">Prev</button>
+                <button class="btn btn-dark w-25" @click="page++">Next</button>
+              </div>
             </div>
           </div>
         </div>
@@ -100,7 +131,8 @@ export default {
         scrollBar: true,
         scrollingSpeed: 1000
       },
-      lang: true,
+      page: 0,
+      show: false,
       en: {
         aboutH1: 'About project',
         aboutText: 'This app will help to future students in universities and professions choose',
@@ -117,7 +149,113 @@ export default {
               name: 'Almaty'
           }
       },
-      recommendations: 'NIXUA'
+      recommendations: [{
+        profession: 'UX/UI designeer',
+        specialities: [
+          {
+            name: 'Computer Science and Software',
+            code: '5B007876',
+            universities: [
+              {
+                name: 'Suleyman Demirel University',
+                site: 'sdu.edu.kz',
+                code: 322,
+                city: 'Almaty',
+                grant_total: 222,
+                grant_rus: 22,
+                grant_kaz:111
+              },
+              {
+                name: 'IITU',
+                site: 'iitu.kz',
+                code: 12,
+                city: 'Almaty',
+                grant_total: 222,
+                            grant_rus: 22,
+                            grant_kaz:111
+                        }
+                    ]
+                },
+                {
+                    name: 'Information systems',
+                    code: '5B00422',
+                    universities: [
+                        {
+                            name: 'SDU',
+                            site: 'sdu.kz',
+                            code: 322,
+                            city: 'Almaty',
+                            grant_total: 222,
+                            grant_rus: 22,
+                            grant_kaz:111
+                        },
+                        {
+                            name: 'IITU',
+                            site: 'iitu.kz',
+                            code: 12,
+                            city: 'Almaty',
+                            grant_total: 222,
+                            grant_rus: 22,
+                            grant_kaz:111
+                        }
+                    ]
+                }
+            ],
+        },
+          {
+              profession: 'Backend Developer',
+              specialities: [
+                  {
+                      name: 'CSS',
+                      code: '5b0d05',
+                      universities: [
+                          {
+                              name: 'SDU',
+                              site: 'sdu.kz',
+                              code: 322,
+                              city: 'Almaty',
+                              grant_total: 222,
+                              grant_rus: 22,
+                              grant_kaz:111
+                          },
+                          {
+                              name: 'IITU',
+                              site: 'iitu.kz',
+                              code: 12,
+                              city: 'Almaty',
+                              grant_total: 222,
+                              grant_rus: 22,
+                              grant_kaz:111
+                          }
+                      ]
+                  },
+                  {
+                      name: 'IS',
+                      code: '5b005',
+                      universities: [
+                          {
+                              name: 'SDU',
+                              site: 'sdu.kz',
+                              code: 322,
+                              city: 'Almaty',
+                              grant_total: 222,
+                              grant_rus: 22,
+                              grant_kaz:111
+                          },
+                          {
+                              name: 'IITU',
+                              site: 'iitu.kz',
+                              code: 12,
+                              city: 'Almaty',
+                              grant_total: 222,
+                              grant_rus: 22,
+                              grant_kaz:111
+                          }
+                      ]
+                  }
+              ],
+          }
+      ],
     }
   },
   methods: {
@@ -199,6 +337,10 @@ export default {
   .circle-2,
   .circle-3 {
     border-radius: 50%;
+  }
+
+  .collapse {
+    border-radius: 0 10px 10px 10px;
   }
 
   .circle-1 {
