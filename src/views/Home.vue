@@ -77,7 +77,7 @@
           </div>
           <div v-if="recommendations" class="col-md-7" data-aos="fade-left">
             <div class="mx-5 p-5" style="background-color: #30304A">
-              <h4>Find {{ recommendations.length }} professions:</h4>
+              <h4>Find TOP {{ recommendations.length }} professions:</h4>
               <hr>
               <h1>{{ recommendations[page].profession }}</h1>
               <hr>
@@ -173,7 +173,7 @@ export default {
           console.log(city)
           const api = 'http://130.61.58.200/api/v1/univer/recommendations/?first_subject='+this.firstSub+'&second_subject='+this.secondSub+'&city='+city+'&score='+this.exam+'&interface_lang='+this.lang
           axios.get(api).then((response) => {
-              this.recommendations = response.data
+              this.recommendations = response.data.results
           })
       },
       getCity () {
