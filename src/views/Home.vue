@@ -36,20 +36,43 @@
         <div class="container-fluid row mx-0" >
           <div class="col-md-5 order-md-first d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="800" >
             <h1 class="pb-5 md-display">{{ en.howWorkH1 }}</h1>
-            <h2>First subject</h2>
-            <input class="w-50" type="text">
-            <h2>Second subject</h2>
-            <input class="w-50" type="text">
-            <h2>Exam score</h2>
-            <input type="number" class="w-25">
-            <h2>City</h2>
-            <input class="w-50" list="city">
-            <datalist id="city" readonly="true">
-              <option v-for="c in cities">{{c.name}}</option>
+            <h2 class="py-2">First subject</h2>
+            <input class="w-50" v-model="firstSub" list="firstsub" type="text">
+            <datalist id="firstsub">
+              <option v-for="subject in subjects">{{subject}}</option>
+            </datalist>
+            <h2 class="py-2">Second subject</h2>
+            <input class="w-50" v-model="secondSub" list="secondsub" type="text">
+            <datalist id="secondsub">
+              <option v-for="subject in subjects">{{subject}}</option>
+            </datalist>
+            <h2 class="py-2">Exam score</h2>
+            <input type="number" v-model="exam" class="w-25">
+            <h2 class="py-2">City</h2>
+            <input class="w-50" v-model="city" list="city">
+            <datalist id="city">
+              <option v-for="city in cities">{{city}}</option>
             </datalist>
             <br>
-            <h2>Do you want to study in other city?
-              <input style="zoom:2" type="checkbox"></h2>
+            <div class="py-2 d-inline-flex">
+              <h2>Do you want to study in other city?</h2>
+              <input class="ml-1" id="checkbox" style="zoom:2" type="checkbox" v-model="checked">
+            </div>
+            <div class="py-2 w-75 d-inline-flex justify-content-between">
+              <h2>Select study language</h2>
+              <div class="d-inline-flex">
+                <h2>
+                <input type="radio" value="ru" v-model="lang" v-on:change="this.generateLists">RU</h2>
+              </div>
+              <div class="d-inline-flex">
+                <h2>
+                <input type="radio" value="en" v-model="lang" v-on:change="this.generateLists">EN</h2>
+              </div>
+              <div class="d-inline-flex">
+                <h2>
+                <input type="radio" value="kz" v-model="lang" v-on:change="this.generateLists">KZ</h2>
+              </div>
+            </div>
             <button class="btn btn-dark w-50" @click="getData">Search</button>
           </div>
           <div v-if="recommendations" class="col-md-7" data-aos="fade-left">
@@ -59,16 +82,16 @@
               <h1>{{ recommendations[page].profession }}</h1>
               <hr>
               <h2>Specialities:</h2>
-              <div class="specialities my-2" v-for="spec in recommendations[page].specialities">
+              <div class="specialities my-2 mx-1 d-inline-block" v-for="spec in recommendations[page].specialities">
                 <button class="btn btn-dark" type="button" data-toggle="collapse"
-                        :data-target="'#example'+spec.code" aria-expanded="false" :aria-controls="'example'+spec.code">
+                        :data-target="'#example'+spec.code.split(' ')[0]" aria-expanded="false" :aria-controls="'example'+spec.code.split(' ')[0]">
                   {{ spec.name }}
                 </button>
-                <div class="collapse bg-secondary" :id="'example'+spec.code">
+                <div class="collapse bg-secondary" :id="'example'+spec.code.split(' ')[0]">
                   <div class="p-2">
                     <h3>Code of speciality: {{ spec.code }}</h3>
                     <h3>Universities:</h3>
-                    <div class="universities my-2" v-for="uni in spec.universities">
+                    <div class="universities d-inline-block mx-1 my-2" v-for="uni in spec.universities">
                       <button class="btn btn-dark" type="button" data-toggle="collapse"
                               :data-target="'#example'+uni.code" aria-expanded="false" :aria-controls="'example'+uni.code">
                         {{ uni.name }}
@@ -76,8 +99,8 @@
                       <div class="collapse bg-secondary" :id="'example'+uni.code">
                         <div class="p-2">
                           <h3>City: {{ uni.city }}</h3>
-                          <h3>Total grants for this speciality: {{ uni.grant_total }} (rus:{{ uni.grant_rus }}, kaz:{{ uni.grant_kaz }})</h3>
-                          <h3><a style="text-decoration:underline;" target="_blank" :href="'http://'+uni.site">Click here to visit their website</a></h3>
+                          <h3>Total grants for this speciality: {{ uni.grant_total }}</h3>
+                          <h3><a style="text-decoration:underline;" :href="uni.site">Click here to visit their website</a></h3>
                         </div>
                       </div>
                     </div>
@@ -105,16 +128,6 @@
             <h2>Tungatarov Aibol</h2>
           </div>
         </div>
-        <div class="soon-bottom mt-5 row container">
-          <div class="col-4">
-          </div>
-          <div class="contacts col-5 d-flex flex-column">
-            <h3 class="my-4">Contacts</h3>
-            <h3 style="opacity: 0.5">+7 702 759 0126</h3>
-            <h3 style="opacity: 0.5">+7 701 678 0211</h3>
-            <h3 style="opacity: 0.5">emainfo@gmail.com</h3>
-          </div>
-        </div>
       </div>
     </full-page>
   </div>
@@ -131,141 +144,54 @@ export default {
         scrollBar: true,
         scrollingSpeed: 1000
       },
+      firstSub: null,
+      secondSub: null,
+      city: null,
+      exam: null,
+      checked: false,
       page: 0,
       show: false,
+      lang: null,
       en: {
         aboutH1: 'About project',
-        aboutText: 'This app will help to future students in universities and professions choose',
+        aboutText: 'This app will help to future students in choose universities and professions',
         howWorkH1: 'Fill the form',
         soonH1: 'Project members'
       },
-      cities: {
-          0: {
-              id: 0,
-              name: 'Pavlodar'
-          },
-          1: {
-              id: 1,
-              name: 'Almaty'
-          }
-      },
-      recommendations: [{
-        profession: 'UX/UI designeer',
-        specialities: [
-          {
-            name: 'Computer Science and Software',
-            code: '5B007876',
-            universities: [
-              {
-                name: 'Suleyman Demirel University',
-                site: 'sdu.edu.kz',
-                code: 322,
-                city: 'Almaty',
-                grant_total: 222,
-                grant_rus: 22,
-                grant_kaz:111
-              },
-              {
-                name: 'IITU',
-                site: 'iitu.kz',
-                code: 12,
-                city: 'Almaty',
-                grant_total: 222,
-                            grant_rus: 22,
-                            grant_kaz:111
-                        }
-                    ]
-                },
-                {
-                    name: 'Information systems',
-                    code: '5B00422',
-                    universities: [
-                        {
-                            name: 'SDU',
-                            site: 'sdu.kz',
-                            code: 322,
-                            city: 'Almaty',
-                            grant_total: 222,
-                            grant_rus: 22,
-                            grant_kaz:111
-                        },
-                        {
-                            name: 'IITU',
-                            site: 'iitu.kz',
-                            code: 12,
-                            city: 'Almaty',
-                            grant_total: 222,
-                            grant_rus: 22,
-                            grant_kaz:111
-                        }
-                    ]
-                }
-            ],
-        },
-          {
-              profession: 'Backend Developer',
-              specialities: [
-                  {
-                      name: 'CSS',
-                      code: '5b0d05',
-                      universities: [
-                          {
-                              name: 'SDU',
-                              site: 'sdu.kz',
-                              code: 322,
-                              city: 'Almaty',
-                              grant_total: 222,
-                              grant_rus: 22,
-                              grant_kaz:111
-                          },
-                          {
-                              name: 'IITU',
-                              site: 'iitu.kz',
-                              code: 12,
-                              city: 'Almaty',
-                              grant_total: 222,
-                              grant_rus: 22,
-                              grant_kaz:111
-                          }
-                      ]
-                  },
-                  {
-                      name: 'IS',
-                      code: '5b005',
-                      universities: [
-                          {
-                              name: 'SDU',
-                              site: 'sdu.kz',
-                              code: 322,
-                              city: 'Almaty',
-                              grant_total: 222,
-                              grant_rus: 22,
-                              grant_kaz:111
-                          },
-                          {
-                              name: 'IITU',
-                              site: 'iitu.kz',
-                              code: 12,
-                              city: 'Almaty',
-                              grant_total: 222,
-                              grant_rus: 22,
-                              grant_kaz:111
-                          }
-                      ]
-                  }
-              ],
-          }
-      ],
+      subjects: null,
+      cities: null,
+      recommendations: null,
     }
   },
   methods: {
+      generateLists () {
+          this.getCity()
+          this.getSubs()
+      },
       getData () {
-          const api = 'http://130.61.58.200/api/v1/univer/recommendations/?first_subject=a&second_subject=b&city=ALL'
+          const city = this.checked ? 'ALL' : this.city
+          console.log(city)
+          const api = 'http://130.61.58.200/api/v1/univer/recommendations/?first_subject='+this.firstSub+'&second_subject='+this.secondSub+'&city='+city+'&score='+this.exam+'&interface_lang='+this.lang
           axios.get(api).then((response) => {
-              console.log(response.data)
               this.recommendations = response.data
           })
+      },
+      getCity () {
+          const api = 'http://130.61.58.200/api/v1/univer/city/list?interface_lang='+this.lang
+          axios.get(api).then((response) => {
+              this.cities = response.data.data
+          })
+      },
+      getSubs () {
+          const api = 'http://130.61.58.200/api/v1/univer/subject/list?interface_lang='+this.lang
+          axios.get(api).then((response) => {
+              this.subjects = response.data.data
+          })
       }
+  },
+  mounted () {
+      this.getCity()
+      this.getSubs()
   }
 }
 </script>
@@ -282,6 +208,10 @@ export default {
     @media screen and (max-width: 320px) {
       font-size: 5rem;
     }
+  }
+
+  h2 {
+    font-size: 1.4rem;
   }
 
   h3 {
@@ -317,7 +247,14 @@ export default {
     }
   }
 
-  .back-side,
+  input {
+    border: #fff;
+    background-color: #fff;
+    font-size: 1.2rem;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
   .circle-1,
   .circle-2,
   .circle-3,
@@ -325,12 +262,6 @@ export default {
   .soon-img
   {
     position: absolute;
-  }
-
-  .back-side {
-    width: 33%;
-    top:0;
-    left: 28rem;
   }
 
   .circle-1,
@@ -386,52 +317,14 @@ export default {
     padding-top: 7%;
     padding-right: 0;
     background-color: #44447F;
+
     .container-fluid {
       padding-right: 0;
     }
+
     .order-md-last {
       padding-right: 0;
     }
-  }
-
-  .icon {
-    color: #FF34DA;
-    margin: 4%;
-  }
-
-  .icon:hover {
-    color:#ffffff;
-  }
-
-  .language {
-    display: inline-flex;
-    position: fixed;
-    z-index: 910;
-    bottom:10%;
-    right: 5%;
-  }
-
-  .lang-selector {
-    font-size: .75rem;
-    border: none;
-    background: none;
-    line-height: 1rem;
-    margin-right: .5rem;
-    padding: .5rem 0 0 .5rem;
-    color: #ffffff;
-  }
-
-  .lang-selector:hover,
-  .lang-selector:active,
-  .lang-selector:focus {
-    span {
-      border-bottom: 1px solid #1FD5FF;
-    }
-    color: #1FD5FF;
-  }
-
-  .lang-selector:focus {
-    outline: none;
   }
 
   .logo {
@@ -466,20 +359,9 @@ export default {
     color: #ffffff;
   }
 
-  .nav-toggle {
-    display: none;
-  }
-
   .navigation {
     position: fixed;
     z-index: 999;
-  }
-
-  .num {
-    font-size: .85rem;
-    color: #FF34DA;
-    margin-left: 1rem;
-    margin-right: 3rem;
   }
 
   .soon {
@@ -488,21 +370,6 @@ export default {
       float: right;
     }
     padding-top: 10%;
-  }
-
-  .soon-bottom,
-  .xs-display
-  {
-    display: none;
-  }
-
-  .step {
-    display: -webkit-box;
-    margin-top: 1rem;
-    width: 60%;
-    img {
-      width: 2.25rem;
-    }
   }
 
 </style>
